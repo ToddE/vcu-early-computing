@@ -1,0 +1,119 @@
+.PH " "
+\&
+.sp -.75i
+.pl +.75i
+.ll +.75i
+.in -.5i
+.ce
+.ft HB
+.ps 13
+GRAB & SHARE
+.ps 10
+.vs 11
+.sp 2
+.ft AR
+To SHARE a file with the class, or GRAB a file from a class folder or
+SUBMIT a paper to your professor enter 
+.ft ZCMI 
+WordPerfect
+.ft P
+by typing \f(HBwp50\fP at the hibbs% prompt.
+.sp 
+.ft C
+hibbs% \f(HBwp50\f(AR
+.sp
+To use SHARE, you can 
+type "share" at the  \fChibbs%\fP prompt or 
+use a "macro" that tells the computer how to run the  program 
+After pressing the PF3 key and then pressing the
+2 key on the keypad, you should see the word \fCMacro:\fP at the
+bottom left-hand side of the screen.  Type in the word \f(HBshare\fP.
+.sp
+.ft HB
+PF3 KP2
+.sp
+.ft C
+Macro: \f(HBshare\f(AR
+.sp
+If all is well, you should be looking at the GRAB & SHARE menu.
+.nf
+.sp 
+.in +.5i
+.ps 8
+.vs 8
+.ft CB
+                            VCU English Department  
+                               Hibbs DEC System                            
+
+                              Class Account Menu                          
+                                
+
+                         (s)hare a file with the class             
+
+                         (g)rab a file from the share directory    
+
+                         (t)urn in a file to your instructor
+
+                          e(x)it                        
+    
+                      Please enter an option from the menu above:
+.ps 10
+.vs 11
+.sp 2
+.ft AR
+.fi
+.in -3i
+If you would like to copy a file to a folder where everyone
+in the class can read it, then choose \f(HBs\fP to SHARE.  
+.BL 2
+.LI
+Type \f(HBs\f(AR to share. The computer will provided a list of
+"folders" that you can to share to.  
+.LI
+If you are unsure of which folder to use, choose the folder 
+called \f(HBClass\f(AR.  Type in the number corresponding to the 
+name of the folder you want to
+share with, making sure that it is typed the same way that is appears on
+the screen.
+.LI
+Choose the file that you wish to share from your directory.  
+A list will be given to you.  Type in the number next to the file name that 
+you wish to share.  If a file by the same
+name already exists in the folder you have selected, the
+computer will ask you to give the file a new name. 
+The name of the file in your home directory will remain the same.
+.LI
+You are finished sharing and can share again or return to the main menu
+and grab a file.
+.LE
+.sp 2
+If you would like to copy a file from one of the folders to your
+account so that you can read it and make comments on it, type \f(HBg\fP
+for GRAB.
+.BL 3
+.LI
+Choose a folder by typing in the number next to the folder name.  
+.LI
+A list of files in the folder is shown.  Type in the number
+corresponding to the name of the file that you would like to grab.  
+.LI
+If a file by the same name already exists in your home directory.  You
+will be asked to rename the file your are grabbing.  
+.LE
+.sp 2
+To make comments on a file, grab the file and edit it using
+.ft ZCMI
+WordPerfect.  
+.ft AR
+Then use the share option to place a copy of the file in  
+the \f(HBComments\fP folder.  If you want to see if comments
+have been made about your file, use the grab option and choose the
+\f(HBComments\fP folder.  Any comments that have been made or comments
+that you have submitted will be listed and available to grab into your
+home directory.
+.sp 2
+If you are finished using the \f(HBshare\fP macro then choose \f(HBx\fP to
+exit the program and return to 
+.ft ZCMI
+WordPerfect.
+.ft AR

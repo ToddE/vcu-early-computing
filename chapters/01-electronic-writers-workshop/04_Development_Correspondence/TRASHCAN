@@ -1,0 +1,59 @@
+From scmgr Mon Nov  9 23:15:57 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA20539; Mon, 9 Nov 92 23:15:56 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: trashcan script (if you care to look at it)
+To: has0ate (A. Todd Emerson)
+Date: Mon, 9 Nov 92 23:15:56 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+HEY - LISTEN - This is approximately what scmgr said:
+
+I thought you would like to have this (or look at it for ideas on
+other scripts).  Put this in your path, change a few things (noted
+below), and voila... you have a trashcan script that will delete the
+oldest "n" number of files in the trashcan directory upon logging
+out.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#! /bin/csh -f
+onintr QUIT
+set command = $0
+set command = $command:t
+set workdir = ~/,trashcan      ****** change to whatever "trash" dir you want
+set tmp = /usr/tmp/${command}$$
+
+######################
+# Removing old files #
+######################
+cd $workdir
+ls -at|sed '1,30d'>$tmp.1   ****** change "30" for MAX # files to keep in trash
+if ( `cat $tmp.1|wc -l` > 0 ) then
+   xargs /bin/rm -fr < $tmp.1
+endif
+
+QUIT:
+/bin/rm -fr $tmp.* > /dev/null
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Add a line to run this script in you ".logout" file... something like:
+
+( ~/,data/,per/,prog/.trash_removal & ) >& /dev/null
+
+
+Also, alias the "rm" command to be equal to something like:
+
+                     "mv \!:* ~/,trashcan"
+
+You get the idea... you can "undelete" up to "n" number of files - as
+long as you do so before deleting "n" (or a number you specify) other
+files.
+
+OR chuck it!
+____
+Greg
+[email redacted]
+

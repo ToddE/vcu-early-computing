@@ -1,0 +1,23 @@
+.nf
+.sp 
+.in +.5i
+.ps 8
+.vs 8
+.ft CB
+                            VCU English Department  
+                               Hibbs DEC System                            
+
+                              Class Account Menu                          
+                                
+
+                         (s)hare a file with the class             
+
+                         (g)rab a file from the share directory    
+
+                         (t)urn in a file to your instructor
+
+                          e(x)it                        
+    
+                      Please enter an option from the menu above:
+.ps 10
+.vs 11

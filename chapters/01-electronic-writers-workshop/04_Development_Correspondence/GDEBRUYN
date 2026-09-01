@@ -1,0 +1,789 @@
+From gdebruyn Sun Jan 24 21:11:29 1993
+Return-Path: <gdebruyn>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA25038; Sun, 24 Jan 93 21:11:29 -0500
+From: Gregory S. DeBruyn <gdebruyn>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: esc codes for special effects
+To: has0ate (A. Todd Emerson)
+Date: Sun, 24 Jan 93 21:11:28 EST
+X-Mailer: ELM-MIME [version 1.0 PL0]
+Status: O
+
+
+Using the escape sequence:    ctrl-[[#m text... ctrl-[[0m
+
+(control-left bracket, left bracket, <number here according to effect
+desired>m, TEXT TO BE AFFECTED BY CODE, control-left bracket, left
+bracket, 0m)
+
+The numbers to be placed in front of the first m are as follows:
+
+1 = bold
+2 = dim
+3 = normal
+4 = underlined normal
+5 = blinking normal
+6 = normal
+7 = inverse video
+8 = invisible
+9 = normal
+
+"0m" code turns text back to normal.
+
+Is this what you wanted?
+____
+Greg
+
+From gdebruyn Sun Jan 24 21:00:56 1993
+Return-Path: <gdebruyn>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA24634; Sun, 24 Jan 93 21:00:55 -0500
+From: Gregory S. DeBruyn <gdebruyn>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: codes
+To: has0ate (A. Todd Emerson)
+Date: Sun, 24 Jan 93 21:00:55 EST
+X-Mailer: ELM-MIME [version 1.0 PL0]
+Status: O
+
+
+I do not know codes for flashing to be turned on and off... but I
+will mail you what I do know in the next mail message.
+
+Sorry I did not reply promptly, but you wrote to my screen in my
+office.  I did not log out for the weekend and just saw your message
+now (Sunday pm).
+____
+Greg
+
+From gdebruyn Mon Feb 22 10:40:36 1993
+Return-Path: <gdebruyn>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA06073; Mon, 22 Feb 93 10:40:35 -0500
+From: Gregory S. DeBruyn <gdebruyn>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: Re: hello
+To: [email redacted] (A. Todd Emerson)
+Date: Mon, 22 Feb 93 10:40:34 EST
+In-Reply-To: <[email redacted]>; from "A. Todd Emerson" at Feb 12, 93 4:46 pm
+X-Mailer: ELM-MIME [version 1.0 PL0]
+Status: O
+
+
+A funny thing happened on the way to the bank...
+
+Well, it sounded like a good opening!
+
+> Did you ever get that letter of thanks and recommendation from Dr.
+> Woodlief?  I havce a feeling you didn't.  I mailed it to her to take a
+> look at and to be honest I never pursued it after that.  ANYWAY!!!
+> Please let me know - I'll try to get something printed up and signed by
+> her by the middle of next week if you haven't heard anything.  
+
+I haven't heard a thing... no need for it now unless you want to do
+it.  Steve Saltzberg did receive an email about you, though.  It came
+from Ann Woodleif and, from what I heard Steve telling Jim Garner,
+said something about a script you had written and how you were a
+great help... and, that she thought it was great that we were using
+something that you had written.  WEIRD!
+
+> 
+> Hope all is going well - sorry I don't stop and talk to you - but it
+> seems I'mm alwasy busy.  I worked over 48 hours between my two jobs last
+> week and went to all my classes as well - life is not always so good.
+
+[personal content redacted]
+
+> The program that you worked on  is still incorporated in teh share
+> program although it is highly modified - but ther are some bugs that I
+> don't understand - something to do with the foreach loop I have a
+> feeling since it will list a file twice if the filenamce has 2 or more
+> periods in it.  I've fixed the problem on atemporary basis, but I think
+> what I need to do is figure out a better way to do file accounting
+> anyway.  This project has turned into a monster - with about 20 pages of
+> coding to do something that is really very simple.  I think I need to
+> learn C - oh well, when I have the time :)
+
+Hint:  (first, off the record... ie, what "I" say is for your ears ONLY)
+
+Jim Garner is working on a program for ACCS.  It uses cursors (C
+programming) and displays fields and allows for users to scroll and
+choose files/names/whatever.  (he actually re-wrote some of the
+cursors code to make it better)
+
+When Steve and Jim were talking, Jim said a few days he had to go
+down and delete a bunch of temp files.  He went looking for the
+culprit and found the script I helped you with.  Well, he told Mike
+Keller he could help re-write the code and it would work a lot more
+efficiently.
+
+Anyway, when Jim Garner is done with this TQM thing he is doing (and
+he is close to finishing), he would probably be able to help re-write
+(actually port some of his code over) and make you life a lot
+easier.  He could also place the code in /usr/local/bin so you would
+not have to install it in ALL those accounts.
+
+I guess all you have to do is make a formal request for help with the
+program and he would help when he had time.
+
+Anyway, take care...
+____
+Greg
+
+From isy9gsd Tue Jul 21 00:13:21 1992
+Return-Path: <isy9gsd>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA19898; Tue, 21 Jul 92 00:13:21 -0400
+From: Gregory S. DeBruyn <isy9gsd>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: hey...
+To: has0ate (A. Todd Emerson)
+Date: Tue, 21 Jul 92 0:13:20 EDT
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+Hey Todd...
+
+What's up?  I hadn't heard from you in a long time and wondered how
+you (Erin, Sara, etc) are doing.  Are you taking any classes over the
+summer?  It seems like there are a lot more people taking classes
+this summer as opposed to last (of course, we have many more
+terminals/PCs/etc than we did last year upstairs, so there appear to
+be more people around).
+
+Are you still in the Eng (is that right?) department?  How much
+longer before you graduate?  I'll tell you one thing, unless the
+economy picks up or you have a job waiting, it's not the best time to
+graduate!
+
+Are you still playing the guitar?  I heard (I think) James Tayler is
+coming to King's Dominion.  I personally don't want to think about
+seeing him there since they do "abbreviated" concerts, but have been
+listening to see if he is coming to some other place on the east
+coast.  I haven't heard anything yet... if you do, let me know if you
+don't mine.
+
+A lot of things have happened in my life... my sister got married (I
+did all the music and other things).  I gave her a string quartet for
+the wedding as well as arranged music for the strings on the songs
+they chose.  My grandmother passed away recently.  I don't know if
+you remember, but she had Alzheimers (sp?).  A friend of mine had an
+operation (cochlear implant) to try to regain her hearing.  It's all
+been a weird time.  I hope things are good with you.
+
+Anyway, I just wanted to drop a line and see how things were going.
+See ya around...
+____
+Greg
+
+From scmgr Fri Oct 23 12:44:53 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA06149; Fri, 23 Oct 92 12:44:52 -0400
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: Re: wp keypad
+To: [email redacted] (A. Todd Emerson)
+Date: Fri, 23 Oct 92 12:44:52 EDT
+In-Reply-To: <[email redacted]>; from "A. Todd Emerson" at Oct 23, 92 12:39 pm
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+HEY - LISTEN - This is approximately what A. Todd Emerson said:
+> 
+> I am looking for access to the wp keypad printout file.
+> 
+> I am working with some 200 level English classes and with Dr. Woodlief
+> on a SCHEV grant dealing with technology in the classroom.
+> 
+> We have copies of the wp keypad, but I would like access to the file so
+> that I can run off a printout and make copies when needed.  can you
+> please let meknow if you can mail me the file?
+> 
+
+I would mail it to you, but I do not have access to the file.  I have
+access to a program "itlist" which Jim Garner wrote that temporarily
+changes my uid (user id) to the ac.staff group and allows me to run
+the program (and print out files from it).
+
+Pretty soon, the itlist will be available from the menu.  It is in
+the testing phase right now.  I will mail you as soon as it is
+available.
+____
+Greg
+
+PS.  If you really need it right now, I will get John Matro to mail
+     the file to me and I will forward it to you.  Let me know.
+
+From scmgr Tue Nov 10 20:49:55 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA04563; Tue, 10 Nov 92 20:49:55 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: Re: lab inquiry
+To: [email redacted] (A. Todd Emerson)
+Date: Tue, 10 Nov 92 20:49:54 EST
+In-Reply-To: <[email redacted]>; from "A. Todd Emerson" at Nov 10, 92 8:32 pm
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+HEY - LISTEN - This is approximately what A. Todd Emerson said:
+> 
+> I was just screwin with ya.  However I can't believe the fire marshall
+> thinks that it is okay to have only one way of exit.  In a singl
+> occupant / one room appartment there is supposed to be two ways to exit
+> the place........
+> 
+> Hmm.
+> 
+
+It was good to have you "complain"... I can use that to try to get
+some eyes open in the office.  I think they would have eventually,
+but maybe this will help.  We are trying to get some ceiling fans...
+maybe that'll help?  Any other ideas???
+
+As for the "one exit" thing... there are (I think) plans to knock out
+a wall in room B-7 to make two exits available (one for emergency use
+only).  That is SLOWLY coming around.  I will like it better if there
+are two exits... if I am still around!
+
+Oh well... more fun to ponder I guess.
+____
+Greg
+
+From scmgr Sat Nov 14 02:28:13 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA11561; Sat, 14 Nov 92 02:28:12 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: I have something...
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 2:28:12 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+I have something that you might want now... I have yet to document
+it, but it allows for the user to input a number and it relates that
+number to the correct file.  Not only that, but it allows for a "next
+higher" number for exiting... if you have 20 files, 1-20 will be the
+file numbers and 21 will be the exit number.
+
+All other entries (22 & higher or 0 and below, and alpha characters)
+are considered invalid.  The user can only enter a number within the
+correct (displayed) range.  If there are more files than will fit on
+the screen at once, sorry... I have not even considered that in my
+approach.
+
+Let me know if (yeah right, if) you are interested.
+____
+Greg
+[email redacted]
+
+From scmgr Sat Nov 14 17:28:08 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA22296; Sat, 14 Nov 92 17:28:07 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: already newer... GEEZE!!!
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 17:28:07 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+It's newer... helps the user see the program is working when it is
+getting a filelist.  Will give it later in case I think of something
+else.
+____
+Greg
+
+From scmgr Sat Nov 14 16:57:57 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA16699; Sat, 14 Nov 92 16:57:57 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: Re: phone
+To: [email redacted] (A. Todd Emerson)
+Date: Sat, 14 Nov 92 16:57:56 EST
+In-Reply-To: <[email redacted]>; from "A. Todd Emerson" at Nov 14, 92 1:31 pm
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+HEY - LISTEN - This is approximately what A. Todd Emerson said:
+> 
+> Incase I need to get intouch with you at work - what is your phone
+> number out at the consulting desk?
+> 
+
+The number is [phone redacted].  I work:
+
+Monday     8-1
+Wednesday  1-6
+Thursday   2-6
+____
+Greg
+
+From scmgr Sat Nov 14 17:23:00 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA21027; Sat, 14 Nov 92 17:22:59 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: okay, it's improved again!
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 17:22:59 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+Todd -
+
+I have improved the program again (this time it only took 20 minutes
+to make a MAJOR improvement).  Now, the program will handle alpha
+input and return an "invalid entry" message.  Before it would blow
+up.
+
+Also, before, when you entered an incorrect/invalid value, you had to
+wait until the program rebuilt the filelist... too time consuming!!!
+I changed that so the program says "Please wait...  getting file
+list" when it first gets the list of files in the variable... and, as
+it gets the files, it sends the output to a temporary file.  Then, it
+cats the files (numbers and filenames) to the screen.  If an invalid
+entry is given, it simply prints "invalid entry" and re-cats the file
+to the screen (instead of having to wait for the program to redo the
+filelist).  MUCH BETTER!!!
+
+Anyway, here it is... don't make too many major enhancements to it as
+I have some other ideas to try on it (and I don't want us to work in
+opposite directions)... let me know if you want it to perform
+anything specific so I have some direction in the changes I make.
+____
+Greg
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#! /bin/csh -f
+#
+# "onintr" and "stty susp" simply disallow users to ctrl-Z and ctrl-C
+# out of the script except through controlled exits.
+#
+onintr QUIT
+stty susp undef
+#######  Set up temporary file location (use process number - $$)
+set command = $0
+set command = ${command:t}
+set tmp = /usr/tmp/${command}$$
+#######  Sets the number of columns for output display
+set numcols = 3
+#######  Several counters used in foreach loop below (init variables)
+set y=1
+set z=1
+set longword=0
+set msg = ""
+#######  "noglob" allows for the displaying of filenames with strange
+####### characters in them (ie, ~ , #, etc...).  With noglob, UNIX
+####### will NOT try to expand these to their usually interpreted
+####### "special meaning."
+set noglob
+#######  Find the longest filename for screen output display
+/bin/ls >&! "$tmp.1"
+foreach x ( "`cat '$tmp.1'`" )
+   set thisword = "`echo '$x'|wc -c`"
+   if ( $thisword > $longword ) then
+      set longword = $thisword
+   endif
+end
+unset noglob
+#######  Set up longword and add 5 for "padding" between display
+@ longword = $longword + 2
+#######  Get file listing into file $tmp.2, padding to length "$longword"
+set filelist = ( `ls -F | grep -v /` )
+LIST:
+set number=""
+set y=1
+set z=1
+clear
+echof "\n\n\n          Please wait... getting file list.  "
+foreach x ( `echo $filelist` )
+    set thisword = "`echo '$x'|wc -c`"
+    if ( "$y" < 10 ) then
+       echof " $y) $x" >> $tmp.2
+    else
+       echof "$y) $x" >> $tmp.2
+    endif
+    while ( $thisword < $longword )
+       echof " " >> $tmp.2
+       @ thisword = $thisword + 1
+    end
+    @ y++
+    @ z++
+    if ( "$z" > $numcols ) then
+       echof "\n" >> $tmp.2
+       set z=1
+    endif
+end
+echo -n "$y) [7mEXIT[0m" >> $tmp.2
+#######  Echo error message (if any) and file list ($tmp.2) to the screen
+AGAIN:
+clear
+if ( "$msg" != "" ) then
+   echof "\n$msg\n\n"
+endif
+cat $tmp.2
+#######  Now get the number of the file to manipulate...
+echof "\n\n\n         Enter the number of the file you wish to... "
+set number = `getstype -b isdigit`
+   if ( "$status" == 1 ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   endif
+   if ( "$number" == "$y" ) then
+      goto QUIT
+   endif
+   if ( ( "$number" > $y ) || ( "$number" < 1 ) ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   else
+#######  Show what number you entered
+      echof "\n\nYou entered the number $number\n\n"
+      set whichnum=0
+      foreach filename ( `echo $filelist` )
+         @ whichnum = $whichnum + 1
+         if ( "$number" == "$whichnum" ) then
+#######  Show what number you entered and the file it matched
+#######  Here is where you would perform whatever action you want
+#######  done on the file the user entered
+            echo "The file corresponding to the number $number is $filename"
+            goto FOUND
+         else
+            if ( "$whichnum" == "$y" ) then
+               set msg = "Invalid Entry -->  $number"
+               goto AGAIN
+            endif
+         endif
+      end
+   endif
+FOUND:
+QUIT:
+echof "\n\n"
+/bin/rm -r $tmp* >> /dev/null
+stty susp 
+
+From scmgr Sat Nov 14 23:08:46 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA19818; Sat, 14 Nov 92 23:08:45 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: new (11:00pm)
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 23:08:44 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+Todd -
+
+I just finished setting up the program so it automatically senses the
+length of the longest file and displays the files in an appropriate
+number of columns.  I did this since you never know what the longest
+filename will be (someone can always put a longer one in) and it is
+not a good idea to have a constant number of columns.  It works!
+____
+Greg
+
+From has0ate Tue Mar 30 10:55:30 1993
+Subject: Re: |test
+To: [email redacted] (Gregory S. DeBruyn)
+Date: Tue, 30 Mar 93 10:55:30 EST
+In-Reply-To: <[email redacted]>; from "Gregory S. DeBruyn" at Mar 30, 93 8:53 am
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Gregory S. DeBruyn sent me mail saying:
+> 
+> 
+> this is a test since A. Woodleif cannot mail your account.  Of course
+> I am sitting here trying to figure it out for her.
+> ____
+> Greg
+> [email redacted]
+> 
+JUST SAY NO!
+
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From gdebruyn Tue Mar 30 08:53:45 1993
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA27767; Tue, 30 Mar 93 08:53:45 -0500
+From: Gregory S. DeBruyn <gdebruyn>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: |test
+To: has0ate (A. Todd Emerson)
+Date: Tue, 30 Mar 93 8:53:45 EST
+X-Mailer: ELM-MIME [version 1.0 PL0]
+Status: OR
+
+
+this is a test since A. Woodleif cannot mail your account.  Of course
+I am sitting here trying to figure it out for her.
+____
+Greg
+[email redacted]
+
+From gdebruyn Tue Mar 30 11:41:25 1993
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA17609; Tue, 30 Mar 93 11:41:25 -0500
+From: Gregory S. DeBruyn <gdebruyn>
+Full-Name: Gregory S. DeBruyn
+Message-Id: <[email redacted]>
+Subject: Re: |test
+To: [email redacted] (A. Todd Emerson)
+Date: Tue, 30 Mar 93 11:41:25 EST
+In-Reply-To: <[email redacted]>; from "A. Todd Emerson" at Mar 30, 93 10:55 am
+X-Mailer: ELM-MIME [version 1.0 PL0]
+Status: OR
+
+A. Todd Emerson writes:
+> 
+> Gregory S. DeBruyn sent me mail saying:
+> > 
+> > 
+> > this is a test since A. Woodleif cannot mail your account.  Of course
+> > I am sitting here trying to figure it out for her.
+> > ____
+> > Greg
+> > [email redacted]
+> > 
+> JUST SAY NO!
+> 
+
+I was going to say something like "I am trying to tell her your
+account CAN receive mail, but she is to English to figure it out!!!"
+but then thought you might have a .forward file sending her your
+mail.  Oh well...
+____
+Greg
+
+From has0ate Wed Apr 21 02:04:05 1993
+Subject: printing
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Wed, 21 Apr 93 2:04:05 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+ It is very late on a Tuesday night (early wednesday morning) and much
+to my dismay, the printer in the writing center is very low on toner.
+So low that the old cartridge prints better than the newer one.  Anyway,
+I was wondering if there is anything I can do tomorrow morning to remedy
+the situation, or if you could fix it - or if you know of another
+IBM comp. that will print Page Maker files.  Gee -- how I love to stay
+up all night and work on the computer.  There is nothing more fun.  
+
+What a life -- but it's almost over (at least school is almost over)
+then I get to worry about stuff only between the hours of 9-5
+(hopefully).  Anyway - take it easy - If you want, give me a call
+tomorrow (wednesday) morning from the office, to let me know the fastest
+way to get a damned print out.  Any help you can provide would be
+greatly appreciated since I have  all kinds of folks breathing down my
+neck - and some of them have bad breath!
+
+Later on, got it made, gatorade!
+
+Todd
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 09:54:10 1993
+Subject: state application
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 9:54:10 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Have you seen or heard of a program that will fill out a VA state
+application.  I thought Helen O'Boyle was working on such a thing at oe
+time, and I seem to recall you talking about a form filling program of
+some sort.  LEt me know what you know -- even if you don't know.  Thanks
+dude.
+
+Todd
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 09:54:55 1993
+Subject: BIFF
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 9:54:55 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Oh yeah, and one other thing, why doensn't biff work anymore.  I really
+miss it!
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 09:57:02 1993
+Subject: floptical
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 9:57:02 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+One other thing. . . Have you gotten a chance to see a demo or play with
+these relatively new floptical drives?  They seem amzing, holding 21 MB
+on a 3.5" disk.  Gosh - that's bigger than my old hard drive.  Later.
+
+Todd
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 10:40:45 1993
+Subject: conversion
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 10:40:45 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Do you know of anyway to do an easy conversion from vi to wp or other 
+DOS or windows based programs?  One thing I am guessing is taht there
+are programs that convert from postscript to whatever their program
+format is and from there I can also probably convert to another format
+of my choice.  So - my question is - do you know of any programs on a pc
+that convert from postscript to their own format?  any help would be
+appreciated since I am trying to get my shit off this account in case I
+lose the account.  
+
+Thanks in advance,
+Todd
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 10:50:08 1993
+Subject: does biff work for you?
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 10:50:08 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Is this biffy ?
+
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 10:55:59 1993
+Subject: bif budd
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 10:55:59 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Have a good life - turn on biff!
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+
+From has0ate Mon Jun 14 11:23:55 1993
+Subject: software
+To: gdebruyn (Gregory S. DeBruyn)
+Date: Mon, 14 Jun 93 11:23:55 EDT
+X-Mailer: ELM-MIME [version 1.0 PL0]
+
+Since I am the king of questions today I figured I'd ask you another
+one.  DO you a good place to buy inexpensive software like WP or WORD
+for windows?  Any ideas for the prices I should be looing for for those
+products - in other words - what is a good deal and what is a rip off
+for WP for windows, etc.
+
+Thanks
+
+-- 
+ _______________________________  _______________________________
+/				\/                               \
+| Todd Emerson			|                                 |
+| [email redacted]	|                                 | 
+|				|                                 |
+| [address redacted]		|                                 |
+| [address redacted]	|                                 |
+ \______________________________/\________________________________/
+
+

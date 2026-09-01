@@ -1,0 +1,9 @@
+#
+set counter = `sort file | grep "idea" | wc -l`
+if ($counter == 4) then 
+	echo "IT WORKS"
+	else
+	echo "IT SUCKS"
+endif
+echo "counter = $counter"
+

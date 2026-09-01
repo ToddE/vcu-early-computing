@@ -1,0 +1,117 @@
+From scmgr Sat Nov 14 14:10:40 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA02683; Sat, 14 Nov 92 14:10:39 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: additional script things added
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 14:10:39 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+
+Todd -
+
+Below is the script as it now stands... I have a few more things you
+might be interested in.  If I remember, you ask which folder the
+student wants to put the file in or something like that?  Maybe we
+should get together again and work a little more on this.  Up to you.
+____
+Greg
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#! /bin/csh -f
+#
+# "onintr" and "stty susp" simply disallow users to ctrl-Z and ctrl-C
+# out of the script except through controlled exits.
+#
+onintr QUIT
+stty susp undef
+#######  Set up temporary file location (use process number - $$)
+set command = $0
+set command = ${command:t}
+set templist = /usr/tmp/${command}$$
+#######  Sets the number of columns for output display
+set numcols = 3
+#######  Several counters used in foreach loop below (init variables)
+set y=1
+set z=1
+set longword=0
+set msg = ""
+#######  "noglob" allows for the displaying of filenames with strange
+####### characters in them (ie, ~ , #, etc...).  With noglob, UNIX
+####### will NOT try to expand these to their usually interpreted
+####### "special meaning."
+set noglob
+#######  Find the longest filename for screen output display
+/bin/ls >&! "$templist"
+foreach x ( "`cat '$templist'`" )
+   set thisword = "`echo '$x'|wc -c`"
+   if ( $thisword > $longword ) then
+      set longword = $thisword
+   endif
+end
+unset noglob
+#######  Set up longword and add 5 for "padding" between display
+@ longword = $longword + 2
+#######  Get file listing and display, padding to length "$longword"
+set filelist = ( `ls -F | grep -v /` )
+LIST:
+set number=""
+set y=1
+set z=1
+clear
+if ( "$msg" != "" ) then
+   echof "\n$msg\n\n"
+endif
+foreach x ( `echo $filelist` )
+    set thisword = "`echo '$x'|wc -c`"
+    if ( "$y" < 10 ) then
+       echof " $y) $x"
+    else
+       echof "$y) $x"
+    endif
+    while ( $thisword < $longword )
+       echo -n " "
+       @ thisword = $thisword + 1
+    end
+    @ y++
+    @ z++
+    if ( "$z" > $numcols ) then
+       echof "\n"
+       set z=1
+    endif
+end
+echo -n "$y) [7mEXIT[0m"
+#######  Now get the number of the file to manipulate...
+echof "\n\n\n         Enter the number of the file you wish to... "
+set number = `getstype -b isdigit`
+   if ( "$number" == "$y" ) then
+      goto QUIT
+   endif
+   if ( ( "$number" > $y ) || ( "$number" < 1 ) ) then
+      set msg = "Invalid Entry -->  $number"
+      goto LIST
+   else
+      echof "\n\nYou entered the number $number\n\n"
+      set whichnum=0
+      foreach filename ( `echo $filelist` )
+         @ whichnum = $whichnum + 1
+         if ( "$number" == "$whichnum" ) then
+            echo "The file corresponding to the number $number is $filename"
+            goto FOUND
+         else
+            if ( "$whichnum" == "$y" ) then
+               set msg = "Invalid Entry -->  $number"
+               goto LIST
+            endif
+         endif
+      end
+   endif
+FOUND:
+QUIT:
+/bin/rm -r $templist >> /dev/null
+stty susp 
+

@@ -1,0 +1,65 @@
+#
+set pth = ~/Share 
+set id = test
+clear
+
+
+echo -n "Did your mother teach you to share? "
+	set ans = $<
+
+if (($ans == No) || ($ans == NO) || ($ans == no) || ($ans == N) || ($ans == n)) then
+exit
+endif
+#############################################################################################################################################################################################
+clear
+	folderchoose:
+	echo 
+	echo 
+	echo 
+	echo  "From which folder?"
+	echo 
+	echo 
+	ls -F | grep "/" | cut -d/ -f1 
+	echo 
+	echo 
+	echo "Enter the name of the Folder you want to share to: "
+		set flder = $<
+		if ! (-d "$pth"/"$flder") then 
+			echo "$flder does not exist.  Please try again."
+			goto folderchoose
+		endif
+	echo 
+
+
+
+#############################################
+	filechoose:
+	echo "What file would you like to share? "
+	echo 
+	ls ~
+	echo 
+	echo -n "Enter file name from list above: " 
+		set filename = $<
+		if ! (-f ~/$filename) then
+			echo "$filename does not exist.  Please try again."
+			goto filechoose
+		endif
+	echo 
+######
+	echo -n "Share $filename with $flder? (Y/n) "
+		set yorn = $<
+		if (($yorn == N) || ($yorn == n) || ($yorn == no) || ($yorn == NO) || ($yorn == No) || ($yorn == nO) || ($yorn == nah) || ($yorn == nope) || ($yorn == non)) then 
+		clear
+		goto folderchoose
+		endif
+
+	if ! ( -f $pth/$flder/$filename.$id) then
+		cp ~/$filename $pth/$flder/$filename.$id
+		else
+		echo "$filename already exists in $flder. "
+		echo -n "What should $filename be called in $flder folder? " 
+		set newname = $<
+		
+		echo -n "Sharing $filename with $flder as $newname. "
+		cp ~/$filename $pth/$flder/$newname.$id
+	endif

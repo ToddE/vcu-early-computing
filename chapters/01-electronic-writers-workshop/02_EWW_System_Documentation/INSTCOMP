@@ -1,0 +1,256 @@
+.PH " "
+\&
+.sp -.75i
+.pl +.5i
+.ll +.75i
+.in -.5i
+.ce
+.ft HB
+.ps 13
+ELECTRONIC WORKSHOP
+.ps 10
+.vs 11
+.sp 2
+.ft AR
+LAN Network computers (use Wyse terminals) are available in the
+following locations: Hibbs 331 and 341 (M 8a-12,1-2,3:30-7p; T 8a-3:30,
+5-8p, W 8a-7p, R 8a-7:30p, F 8a-11a; WP instruction available); GPAB
+3307 (M-R 9a-10p; F 9a-4p); Cabell B-8 (M-R 8a-11:45p; F 8a-8:45p; Sa
+10a-5:45p; Su 12p-10:45p); Bus 4113 (M-R 8a-11p; F 8a-5p; Sa 9a-5p; Su
+1p-11p). These terminals use the PF keys and keypad instead of the usual
+WP50 Function keys (see layout on back). Psy labs use F keys and
+keypad with some adaptations. 
+
+To begin, type in your \f(HBlogin\f(AR, press return, then type your 
+\f(HBpassword\f(AR (these will be on the sheet you pick up from Academic
+Computing in the library). If you are not in Cabell, type cabell
+when the login first comes up, then enter your computer login.
+Note that you will print on the printer in Cabell unless you change
+printers by printing from a retrieved file. 
+
+Your first command!
+  Type \f(HBx\f(AR to leave menu. You will then be at the cabell% command line.
+You have altered your account so that you will now begin with the
+command line. If you wish to use e-mail or other features on the menu,
+simply type menu at the % in the future.
+
+Type:
+  cabell% \f(HB~b8494/setup\f(AR [Please note the tilde]
+
+To WRITE a paper (which you save as a file), SHARE a file with the class, 
+GRAB a file from a class folder or
+SUBMIT a paper to your professor enter 
+.ft ZCMI 
+WordPerfect
+.ft P
+by typing \f(HBwp50\fP at the cabell% prompt.
+.ft C
+
+cabell% \f(HBwp50\f(AR
+
+To use SHARE, you  
+use a "macro" that tells the computer how to run the program. 
+After pressing the PF3 key and then pressing the
+2 key on the keypad, you should see the word \fCMacro:\fP at the
+bottom left-hand side of the screen.  Type in the word \f(HBshare\fP.
+.sp
+.ft HB
+PF3 KP2
+.sp
+.ft C
+Macro: \f(HBshare\f(AR
+.sp
+If all is well, you should be looking at the GRAB & SHARE menu.
+.nf
+.sp 
+.in +.5i
+.ps 8
+.vs 8
+.ft CB
+                            VCU English Department  
+                               Hibbs DEC System                            
+
+                              Class Account Menu                          
+                                
+
+                         (s)hare a file with the class             
+
+                         (g)rab a file from the share directory    
+
+                         (t)urn in a file to your instructor
+
+                          e(x)it                        
+    
+                      Please enter an option from the menu above:
+.ps 10
+.vs 11
+.sp 2
+.ft AR
+.fi
+.in -3i
+If you would like to copy a file to a folder where everyone
+in the class can read it or turn in to the teacher, then choose \f(HBs\fP to SHARE.  
+.BL 2
+.LI
+Type \f(HBs\f(AR to share. The computer will provide a list of
+"folders" that you can share to.  
+.LI
+(If you are unsure of which folder to use, choose the folder 
+called \f(HBClass\f(AR).  Type in the number corresponding to the 
+name of the folder you want to
+share with, making sure that it is typed the same way that is appears on
+the screen.
+.LI
+Choose the file that you wish to share from your directory.  
+A list will be given to you.  Type in the number next to the file name that 
+you wish to share.  If a file by the same
+name already exists in the folder you have selected, the
+computer will ask you to give the file a new name. 
+The name of the file in your home directory will remain the same.
+.LI
+You are finished sharing and will be returned to the GRAB and SHARE menu
+where you can share, grab, turn in, or exit (which will return you to
+your directory of files).
+.LE
+.bp
+.sp 
+If you would like to copy a file from one of the folders to your
+account so that you can read it and make comments on it, type \f(HBg\fP
+for GRAB.
+.BL 3
+.LI
+Choose a folder by typing in the number next to the folder name.  
+.LI
+A list of files in the folder is shown.  Type in the number
+corresponding to the name of the file that you would like to grab.  
+.LI
+If a file by the same name already exists in your home directory.  You
+will be asked to rename the file your are grabbing.  
+.LE
+.sp 
+To make comments on a file, grab the file and edit it using
+.ft ZCMI
+WordPerfect.  
+.ft AR
+Then use the share option to place a copy of the file in  
+the \f(HBComments\fP folder.  If you want to see if comments
+have been made about your file, use the grab option and choose the
+\f(HBComments\fP folder.  Any comments that have been made on your
+shared file
+be listed and available to grab into your
+home directory.
+If you are finished using the \f(HBshare\fP macro then choose \f(HBx\fP to
+exit the program and return to 
+.ft ZCMI
+WordPerfect.
+.ft AR
+To exit after completing work on any files in WordPerfect, type 0
+(giving you a blank screen), KP 6 (to exit), N (when asked to save), Y
+(when asked if leaving WP50), and type \f(HBlogout\f(AR to finish  your session.
+
+.sp 2
+.in .5i
+.ds R \h'.1m'
+.ds U \v'-.015i'
+.ds D \v'+.015i'
+.fp 1 HR
+.fp 2 PI
+.fp 3 HB
+.fp 4 HB
+.nr q \w'PF3\(em>'
+.in +\nqu
+.TS
+box tab(+);
+c | c | c | c.
+.sp 2
+\f[TR]PF1\fP+\f[TI]PF2\fP+\f[TB]PF3\fP+HOME
+.sp 2
+_
+.nr x \n(nlu
+\f[TB]Thesaurus+Replace+Reveal Codes+Block
+\f[TI]Shell+Spell+Screen+Move
+\f[TR]Setup+\*U\(<-\*D\*RSearch+Switch+\*U\(->\*D\*RIndent\*R\*U\(<-\*D
+\f1Escape+Search\*R\*U\(->\*D+Help+\*U\(->\*D\*RIndent
+.sp .25
+--\f2KeyPad 7\f1--+--\f2KeyPad 8\f1--+--\f2KeyPad 9\f1--+\f2(\*R\*R\-\*R\*R)\f1
+_
+.nr y \n(nlu
+\f[TB]Mark Text+Flush Right+Math/Columns+Style
+\f[TI]Text In/Out+Tab Align+Footnote+Font
+\f[TR]Date/Outlist+Center+Print+Format
+\f1List Files+Bold+Exit+Underline
+.sp .25
+--\f2KeyPad 4\f1--+--\f2KeyPad 5\f1--+--\f2KeyPad 6\f1--+\f2(\*R\*R,\*R\*R)\f1
+_+_+_+_
+.nr z \n(nlu
+.T&
+c | c | c | c
+c | c | c | c
+c | c | c | c
+c | c | c | c
+c | c | c | c
+c s | c | c.
+\f[TB]Graphics+Macro+Goto
+\f[TI]Merge/Sort+Macro Define+Hard Page
+\f[TR]Merge Codes+Retrieve+Page Up
+\f1Merge R+Save+Page Down
+.sp .25
+--\f2KeyPad 1\f1--+--\f2KeyPad 2\f1--+--\f2KeyPad 3\f1--
+_+_+\^
+.nr Z \n(nlu
+.T&
+c s | c | c.
+T{
+.ll \w'Mrg Codes'u
+.nf
+.sp 3
+.ce 2
+\f1Cancel
+.sp .25
+--\f2KeyPad 0\f1--
+T}+\f[TB]Delete Page+T{
+.ll \w'PrnFormat'u
+.nf
+.ce 5
+\f[TB]Typovr/Insrt
+\f[TI]Macro Cmds
+\f[TR]Hard Hyphen
+\f1Soft Hyphen
+.sp .25
+\f2(Enter Key)\f1
+T}
+\^+\f[TI]Delete Line+\^
+\^+\f[TR]Delete Word+\^
+\^+\f1Delete Char+\^
+.sp .25
+\^+\f2(\*R\*R.\*R\*R)\f1+\^
+.TE
+.in -.2i
+.in -.1i
+.nf
+.in .5i
+.sp |\nxu
+.sp 5.625
+\f[TB]PF3\*R\*R\*U\(->\*D
+\f[TI]PF2\*R\*R\*U\(->\*D
+\f[TR]PF1\*R\*R\*U\(->\*D
+.sp 2.375
+\f[TB]PF3\*R\*R\*U\(->\*D
+\f[TI]PF2\*R\*R\*U\(->\*D
+\f[TR]PF1\*R\*R\*U\(->\*D
+.sp 2.375
+\f[TB]PF3\*R\*R\*U\(->\*D
+\f[TI]PF2\*R\*R\*U\(->\*D
+\f[TR]PF1\*R\*R\*U\(->\*D
+.sp 2.375
+\f[TB]PF3\*R\*R\*U\(->\*D
+\f[TI]PF2\*R\*R\*U\(->\*D
+\f[TR]PF1\*R\*R\*U\(->\*D
+.fp 1 R
+.fp 2 I
+.fp 3 B
+.fp 4 BI
+.fi
+.ll 6.5i
+.in 0
+

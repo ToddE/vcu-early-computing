@@ -1,0 +1,24 @@
+######################################################################
+# Chat - with a turn on/off feature
+######################################################################
+#  it is not necessary to turn chat on if you are sending the talk
+#  request, but if you wan to receive otalks you must turn chat on by
+#  typing, at the prompt:
+#
+#  cabell%  chat on
+######################################################################
+
+if ($#argv == 0) then
+        echo "usage: dirman [directory]  "
+        exit 1
+endif
+
+setenv directory $1 
+
+set var = `who am i | cut -c17-23`
+
+cd $directory
+echo "you are now in directory:  $directory"
+ls
+~/bin/vartest lala
+exit

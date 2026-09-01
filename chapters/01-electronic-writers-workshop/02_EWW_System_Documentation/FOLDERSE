@@ -1,0 +1,131 @@
+# 
+# @(#) folderset.  Copyright 1993 by A. Todd Emerson.
+# @(#) share v2.1   Copyright 1993  A. Todd Emerson.  
+# @(#) Author: Todd Emerson.  
+# @(#) Include Programs: 
+# @(#) 	* share v2.1.  Copyright 1993 by A. Todd Emerson
+# @(#) 	* NUMLIST (FLDRNUMLIST).  Copyright 1993 by A. Todd Emerson
+# @(#)	    -newlist .  Copyright 1992,1993 by Gregory DeBruyn
+# @(#) 	* GETFILENUM.  Copyright 1993 by A. Todd Emerson
+# @(#) 	* MENUGETOPTION. Copyright 1993 by A. Todd Emerson 
+# @(#) 	* profbox.  Copyright  1993 by A. Todd Emerson
+# @(#) 	* setup.  Copyright 1993 by A. Todd Emerson
+# @(#)
+# @(#)        folderset is the property of A. Todd Emerson
+# @(#) All rights reserved.  No part of this script may be copied, 
+# @(#)    or reproduced in any form without the permission of:
+# @(#)          A. Todd Emerson (proxy: Michael Keller)
+# @(#)                         AND
+# @(#)               Department of English, VCU 
+set sharepth = ~smhibbs/EWW
+clear
+top:
+
+if ! ( -d ~/box) then
+	mkdir ~/box
+	chmod gu+rwx ~/box
+	echo "box made."
+endif
+
+
+if ! ( -d ~/Share.folders) then
+	mkdir ~/Share.folders
+	chmod gu+rwx ~/Share.folders
+	echo "Share.folders directory made."
+endif
+
+if ! ( -d ~/Share.folders/Comments) then
+	mkdir ~/Share.folders/Comments
+	chmod gu+rwx ~/Share.folders/Comments
+	echo "Comments directory made."
+	echo "NO FILES AVAILABLE.  ENTER 0 to EXIT" > ~/Share.folders/Comments/.folderlist_0
+	$sharepth/NUMLIST ~/Share.folders/Comments
+endif
+
+if ! ( -d ~/Share.folders/Class) then
+	mkdir ~/Share.folders/Class
+	chmod gu+rwx ~/Share.folders/Class
+	echo "Class directory made."
+	echo "NO FILES AVAILABLE.  ENTER 0 to EXIT" > ~/Share.folders/Class/.folderlist_0
+	$sharepth/NUMLIST ~/Share.folders/Class
+endif
+
+if ! ( -d ~/Share.folders/Read) then
+	mkdir ~/Share.folders/Read
+	chmod gu+rwx ~/Share.folders/Read
+	echo "Read directory made."
+	echo "NO FILES AVAILABLE.  ENTER 0 to EXIT" > ~/Share.folders/Read/.folderlist_0
+	$sharepth/NUMLIST ~/Share.folders/Read
+endif
+
+$sharepth/FLDRNUMLIST ~/Share.folders
+
+echo 
+echo "Available folders for Share."
+echo 
+ls -F ~/Share.folders | grep "/" | cut -d/ -f1 
+echo 
+echo -n "Would you like to (c)reate or (r)emove a directory or e(x)it? "
+set answer = `getstype anykey`
+echo 
+while (1)
+switch ($answer)
+
+echo 
+case c:
+echo -n "What name would you like to give to your new folder? "
+	set creation = $<
+
+	while (-d ~/Share.folders/$creation)
+		echo "$creation already exists."
+		echo -n "Choose another name for the new folder: "
+		set creation = $<
+	end
+
+	if ! (-d ~/Share.folders/$creation) then
+		mkdir ~/Share.folders/$creation
+		chmod gu+rwx ~/Share.folders/$creation
+		echo "NO FILES AVAILABLE.  ENTER 0 to EXIT" > ~/Share.folders/$creation/.folderlist_0
+	endif
+$sharepth/NUMLIST ~/Share.folders/$creation
+$sharepth/FLDRNUMLIST ~/Share.folders
+goto top
+breaksw
+
+case r:
+echo -n "Which folder would you like to remove? "
+	set destruct = $<
+
+	while ! (-d ~/Share.folders/$destruct)
+		echo "$destruct does not exist."
+		goto top
+	end
+
+	if (-d ~/Share.folders/$destruct) then
+		echo 
+		echo "These files exist in $destruct folder"
+		echo 
+		ls ~/Share.folders/$destruct
+		echo 
+		echo "WARNING.  All files in the folder, $destruct, will be removed."
+		echo -n "Continue? (N/y) "
+		set nory = $<
+			if (($nory == y) || ($nory == Y)) then
+			rm -fr ~/Share.folders/$destruct	
+			echo "$destruct has been removed."
+			endif 
+$sharepth/FLDRNUMLIST ~/Share.folders
+		
+	goto top
+	endif
+goto top
+breaksw
+
+case x:
+$sharepth/FLDRNUMLIST ~/Share.folders
+
+exit
+breaksw
+
+endsw
+end

@@ -1,0 +1,38 @@
+######################################################################
+# Chat - with a turn on/off feature
+######################################################################
+#  it is not necessary to turn chat on if you are sending the talk
+#  request, but if you wan to receive otalks you must turn chat on by
+#  typing, at the prompt:
+#
+#  cabell%  chat on
+######################################################################
+
+
+if ($#argv == 0) then
+        echo "usage: chat [<[email redacted]>]  [off]  [on]"
+        exit 1
+endif
+
+set name = $1
+
+set var = `who am i | cut -c17-23`
+
+if ($name == 'off') then 
+	chmod o-w /dev/$var
+	echo "otalk permission turned off"
+endif
+
+if ($name == 'on') then
+	chmod +w /dev/$var
+	echo "otalk permission turned on"
+endif
+
+if ($name != 'on') then
+	if ($name != 'off') then
+		chmod +rw /dev/$var
+		otalk $name
+	endif
+endif
+
+exit

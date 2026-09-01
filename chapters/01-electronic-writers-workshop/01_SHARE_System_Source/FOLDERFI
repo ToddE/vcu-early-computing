@@ -1,0 +1,17 @@
+echo "Grab a file from which folder?"
+
+folderchoose:
+echo 
+echo 
+echo 
+ls -F | grep "/" | cut -d/ -f1 
+echo 
+echo 
+echo "Comment on a file from which folder? "
+		set flder = $<
+		if ! (-d "$pth"/"$flder") then 
+			echo "$flder does not exist.  Please try again."
+			goto folderchoose
+		endif
+	echo 
+

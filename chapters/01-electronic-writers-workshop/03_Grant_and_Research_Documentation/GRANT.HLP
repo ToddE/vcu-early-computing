@@ -1,0 +1,213 @@
+From csc8mnp Sat Jul 13 07:03:12 1991
+Return-Path: <csc8mnp>
+Received:  by cabell.vcu.edu (5.60/OSx-4.1-hm)
+	id AA10233; Sat, 13 Jul 91 07:03:11 EDT
+Date: Sat, 13 Jul 91 07:03:11 EDT
+From: Macon N. Pegram <csc8mnp>
+Full-Name: Macon N. Pegram
+Message-Id: <[email redacted]>
+To: has0ate
+Subject: Request for help...
+Status: R
+
+I'm very sorry this is so late in coming... I'm going out of town from 
+July 13 - July 21. I will help you with your program, but it needs to wait 
+until I get back.  If you want, I'll write the program for you and you can 
+call it yours.  No big deal really, 'cause it sounds rather simple, and I 
+don't mind.  It won't take alot of my time I don't think.  
+ 
+If however, you need it right away, a couple words of advice:
+
+there is no command as "assign" in standard pascal (atleast not on this compiler)
+You do it all in reset and rewrite:   reset(garbin, 'filename'); 
+(I think it's like that... not sure.. remember to include garbin in the 
+files at the top:  program stuff (input, output, garbin);
+
+Secondly, I think there is a string command in this version of pascal, but VCU
+has it so poorly documented, I can't tell for sure.  You can implement your
+own strings with this type:
+
+type
+   strings = record
+        stringpart : packed array [1..maxchars] of char;
+        lenpart : integer;
+   end;
+
+Define a constant called "maxchars" which is your maximum character length.
+To address the elements of a record you use a period... Example:
+
+var
+   Astring: strings;
+   charindex : integer;
+
+begin
+    for charindex := 1 to Astring.lenpart do
+        write (Astring.stringpart[charindex]);
+end.
+
+That will (providing information has been loaded into the variable) print out
+a string using the string type we defined.
+
+Finally, the next piece of mail will contain a random number function.  I would
+suggest removing the line that says something like: "seed := 47132" (or some
+number like that).  This should give you more random results.  
+
+Hope this helps.. if this isn't enough, then just mail me and I'll get back
+to you on the 21st.
+ 
+Macon
+
+
+
+
+From csc8mnp Sat Jul 13 07:11:35 1991
+Return-Path: <csc8mnp>
+Received:  by cabell.vcu.edu (5.60/OSx-4.1-hm)
+	id AA10345; Sat, 13 Jul 91 07:11:34 EDT
+Date: Sat, 13 Jul 91 07:11:34 EDT
+From: Macon N. Pegram <csc8mnp>
+Full-Name: Macon N. Pegram
+Message-Id: <[email redacted]>
+To: has0ate
+Status: R
+
+(* Note.. UNIX pascal is case sensitive so to compile this type: 
+   pascal -f (filename).p *)
+
+program RandomNumberDemo (input, output);
+
+var
+   seed : integer;   (* Global seed for random number generator *)
+   value, min, max : integer;
+
+(* Random number generator by Steve Park and Keith Miller, described in 
+   Comm. ACM 31, 10, pp.1192-1201, Oct 1988.
+   Returns a Random real value such that 0.0 <= random < 1.0.
+
+   Note: requires a Global integer seed to be initialized to some value 
+   between 0 and 2147483647 before calling it the first time. *)
+
+function Random : real;
+
+const
+      modulus   =  2147483647;   (* 2^31 -  1 *)
+      multiplier = 16807;        (* 7^5 *)
+      alpha   = 127773;          (* Modulus div Multiplier *)
+      beta    = 2836;            (* modulus mod multiplier *)
+
+var
+   high, low, test : integer;
+
+begin
+     high := seed div alpha;
+     low := seed mod alpha;
+     test := multiplier * low - beta * high;
+     if test > 0 then
+        seed := test
+     else
+        seed := test + modulus;
+     Random := seed / modulus;
+end;   (* Function Random *)
+
+begin (* Mainline of demo *)
+   seed := 46198;  (* I would advise finding a way to read the system time or
+                      or some other method of seeding the random number 
+                      generator or you will get the same pattern every time *)
+
+   value := trunc (Random * 100) + 1; (* Choose a number between 1 - 100 *)
+   writeln ('A number between 1 - 100: ', value:1);
+
+   min := 3;
+   max := 9;
+   value := trunc (Random * (max - min + 1)) + min; (* Random # between max 
+                                                     and min *)
+   writeln ('A number between ', min:1, ' - ', max:1,': ', value:1);
+end.
+
+From csc8mnp Sat Jul 13 07:13:10 1991
+Return-Path: <csc8mnp>
+Received:  by cabell.vcu.edu (5.60/OSx-4.1-hm)
+	id AA10360; Sat, 13 Jul 91 07:13:09 EDT
+Date: Sat, 13 Jul 91 07:13:09 EDT
+From: Macon N. Pegram <csc8mnp>
+Full-Name: Macon N. Pegram
+Message-Id: <[email redacted]>
+To: has0ate
+Subject: the file that follows...
+Status: R
+
+Uses reading and outputting textfiles.  You might find that aspect of it 
+useful.  It was written by an electrical engineering major friend of mine, so
+it's not the BEST pascal code, but it's handling of files is good enough.
+ 
+Macon
+
+From csc8mnp Sat Jul 13 07:13:23 1991
+Return-Path: <csc8mnp>
+Received:  by cabell.vcu.edu (5.60/OSx-4.1-hm)
+	id AA10368; Sat, 13 Jul 91 07:13:22 EDT
+Date: Sat, 13 Jul 91 07:13:22 EDT
+From: Macon N. Pegram <csc8mnp>
+Full-Name: Macon N. Pegram
+Message-Id: <[email redacted]>
+To: has0ate
+Status: R
+
+Program Conversion (input, output, DataFile, OutFile);
+
+var
+  length: real;
+  max: real;
+  normal:real;
+  count : integer;
+  OutComment: array [1..40] of char;
+  InName: array [1..20] of char;
+  OutName: array [1..20] of char;
+  DataFile, OutFile : text;
+
+
+  { This program is designed to read in data from an input file.  First}
+  { it will traverse the whole file to find the largest maximum absol }
+  { ute value.  Once found, all the data is divided by the maximum    }
+  { in order to have normalized data.  The data is sent to a user     }
+  { input file.                                                       }
+
+  begin
+    writeln ('What is the name of the input file?');
+    count := 0;
+    while (not eoln) and (Count < 20) do  {If more than 20 your array will }
+                                           {Overflow }
+        begin
+             Count := Count + 1;
+             read (InName[Count]);
+        end;
+    readln;
+ 
+    writeln('What is the name of your output file?');
+    count := 0;
+    while (not eoln) and (Count < 20) do  {If more than 20 your array will }
+                                           {Overflow }
+        begin
+             Count := Count + 1;
+             read (OutName[Count]);
+        end;
+    readln;
+    reset (DataFile, InName);
+    max:=0;
+
+
+    repeat
+           readln (DataFile, length);
+            if max < abs(length) then max:= length;
+    until EOF(DataFile);
+
+    reset (DataFile, InName);
+    rewrite(OutFile, OutName);
+
+    repeat
+            readln(DataFile, length);
+             normal:= length/max;
+            writeln(OutFile, normal)
+    until EOF(DataFile);
+end.
+

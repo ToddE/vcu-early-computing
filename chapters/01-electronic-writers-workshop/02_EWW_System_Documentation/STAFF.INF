@@ -1,0 +1,59 @@
+
+
+
+
+The program allows students to read and respond to other student papers,
+and provides the instructor with a way to present a field questions that
+are useful for considering outside of class.  For example, Dr. Anne
+Woodlief has the program set up to store a series of questions or things
+to think about while reading different texts.  The students are able to
+"grab" and edit electronic copies of the questions that Dr. Woodlief has
+presented and store their reading responses on their private account.
+When response papers are assigned, the student has her own reading
+responses outlined along with the questions the instructor has asked.
+
+
+The program allows students to copy files from their accounts to a place
+where other students in their class can read and respond to these files.
+There are folders
+
+What is Grab & Share?
+
+Grab & Share are the two basic functions of the Electronic Writers'
+Workshop.  A student is able to write a document using WordPerfect 5.0
+on the networked DEC computer system and execute a \fBmacro\fP that runs
+a c-shell script.  The shell script provides the student with a menu,
+instructing the student to choose an option: grab a file, share a file,
+turn in a paper to your professor, or exit.  
+
+GRAPHIC
+
+A student may share her file, allowing her classmembers and professor to
+read it, by choosing the share option.  THe student is given a list of
+\fBfolders\fP and is asked to choose the folder with which she wishes to
+share her file.
+
+The student is then given a list of the files in her account and is
+asked to type in the name of the file she wishes to share.  The share
+option copies the selected file from the student's account to the folder
+allowing other students to read and copy and comment on the student's
+text.  
+
+
+A student may grab a file, allowing her to read and edit a copy of any
+file in on of the folders, by choosing the grab option.  Again, the
+student is given a list of folders and is asked to choose a folder.
+The student is then given a list of available files in the folder they
+have chosen and is asked to choose the fielname of the folder they wish
+to grab.  After the student enters the filename, the grab option places
+a copy of the file they have chosen into their account, where they can
+read and edit it.  
+
+The submit option  allows students to turn in papers to their professor.
+The student is given a list of her files and is asked to enter the name
+of the file she wishes to submit.  A copy of the file is sent to the
+instructor's "box"  allowing the instructor to read, print, edit or
+perform any WordPerfect function with the students file.  
+
+
+

@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const mdChapters = (await getCollection('chapters', ({ data, id }) => !data.draft && !id.startsWith('_')))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="VCU Early Academic Computing"
+  description="A research project documenting how VCU's College of Humanities and Sciences began using computing in the classroom, before the web and just after."
+>
+  <div class="eyebrow">Virginia Commonwealth University &middot; College of Humanities and Sciences</div>
+  <h1>VCU Early Academic Computing</h1>
+  <p class="lede">
+    A research project documenting how VCU's College of Humanities and
+    Sciences began putting computing to work in the classroom &mdash; from
+    the last years before the World Wide Web through the early web era.
+    Built from recovered source code, correspondence, and (eventually)
+    interviews with the people who did it.
+  </p>
+
+  <section>
+    <h2>Chapters</h2>
+    <div class="chapters">
+      <a class="chapter-card" href="chapters/eww/">
+        <div class="chapter-num">Chapter 01 &middot; 1990&ndash;1993</div>
+        <div class="chapter-title">Before the Browser: The Electronic Writers&rsquo; Workshop</div>
+        <p class="chapter-desc">
+          How an undergraduate, an English professor, and a campus systems
+          consultant built VCU's first networked writing classroom, years
+          before anyone on campus had seen a web page.
+        </p>
+      </a>
+
+      {mdChapters.map((chapter) => (
+        <a class="chapter-card" href={`chapters/${chapter.id.replace(/\.md$/, '')}/`}>
+          <div class="chapter-num">Chapter {chapter.data.order} &middot; {chapter.data.dates}</div>
+          <div class="chapter-title">{chapter.data.title}</div>
+          <p class="chapter-desc">{chapter.data.dek}</p>
+        </a>
+      ))}
+
+      {/* Remove this placeholder once a real chapter file covers this. */}
+      <div class="chapter-card pending">
+        <div class="chapter-num">Coming up</div>
+        <div class="chapter-title">Founding Academic Computing at VCU</div>
+        <p class="chapter-desc">
+          An oral history with James Spivey, founder of VCU's Academic
+          Computing, on the origins and early direction of academic
+          computing services on campus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    This site presents curated, reviewed material only. Source research
+    materials are maintained in the same repository under
+    <code>chapters/</code>. Questions or corrections: contact the project
+    maintainer.
+  </footer>
+</BaseLayout>

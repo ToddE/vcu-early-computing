@@ -1,0 +1,344 @@
+.PH" "
+.fi
+.nh
+.ft HB
+.ps 12
+Abstract
+.ft
+.ps
+.ti 3
+.sp 1
+I will develop a user friendly computer program to aid writers in
+the prewriting process. My research of prewriting heuristics will come 
+primarily from composition journals such as \fICollege Composition 
+and Communication\fR and \fICollege English\fR, with
+additional information coming from a survey of existing prewriting software,
+instructional texts, surveys
+and interviews with writing instructors and composition experts.
+I will use the information from the surveys and interviews to see
+what preparation writing instructors use before they write a text as well as
+and how they teach their students to prewrite.  I will write the prewriting 
+program to fit the instructors' and students' needs.  The
+software will be assessed and go through a series of tests
+before I make it available to the English
+Department's account on the UNIX/Local Area Network of Virginia Commonwealth University where writers can access the
+program.  The software
+will then be released for use by faculty, English 101 classes,
+individual students, and both beginning and advanced writers.
+.sp 2
+.ft HB
+.ps 12
+Background
+.ft
+.sp 1
+.ps
+.ti 3
+Composing is comprised of several recursive processes: prewriting, drafting, and
+revision.  Prewriting is the process in which writers develop and
+focus their ideas for texts, but often, heuristics for such processes are
+difficult for students to use.  For example, two heuristics designed to
+help writers in the prewriting process are the "pentad,"
+developed by Kenneth Burke, and the "particle/wave/field"
+heuristic, developed by Richard Young, Kenneth Pike, and Alton
+Becker.  Both of these heuristics have several complicated
+sequences to follow, along with jargon that makes them difficult for
+the beginning writer to understand without additional
+instructions from a professor.  A prewriting program would
+provide the "translation" of a heuristic while the computer would
+allow the writer access to the program.
+.ti 3
+The English Department of Virginia Commonwealth University uses
+a UNIX/LAN with word processing software such as
+Word Perfect, VI Text Editor and Writer's Workbench to help both
+beginning and advanced writers enter and revise texts.  A
+prewriting program installed  on the system  would allow all
+English students, and all writers who have access to the Hibbs
+computer, to develop their ideas through the use of the
+prewriting program.  Based on the research I have done,  few user friendly
+prewriting programs that aid the writer through the prewriting process are
+available.
+.ft HB
+.ps 12
+.sp 2
+Goals
+.ft
+.ps
+.sp 1
+Through this project I hope to 
+.sp 1
+.BL 2
+.LI
+gain an understanding of composition theory 
+.LI
+assess departmental and classroom prewriting needs 
+.LI
+gain a practical knowledge of prewriting through surveys and interviews with
+professional writers and writing instructors
+.LI
+develop a prewriting software package and combined heuristic that is easy to use
+.LI
+create an annotated bibliography of available prewriting software 
+.LI
+become a better computer programmer
+.LI
+make prewriting software available to the English Department
+.LI
+promote, through the English Department, the use of the software among
+beginning and advanced writers
+.LE
+.sp 2
+.bp
+.ft HB
+.ps 12
+Progress to Date
+.ft B
+.ps 
+.sp 1
+Sources 
+.ft R
+.VL 4
+.LI
+Kinney, James. "Tagmemic Rhetoric: A Reconsideration." \fICCC\fR, 29 (May 1978), 141-45.
+.LI
+Kneupper, Charles W. "Revising the Tagmemic Heuristic:
+Theoretical and Pedagogical Consideration." \fICCC\fR, 31 (May 1980),
+160-68. 
+.LI 
+Murray, Donald. "Write Before Writing." \fICCC\fR, 29
+(December 1978), 375- 82.
+.LI
+Strickland, James. "Prewriting and Computing." \fIWriting On-Line\fR.
+(New Jersey: Boynton Books, 1985) 67-74.
+.LI
+.LI
+.LE
+.ti 3
+I have begun research of prewriting heuristics and the software
+available for computer assisted instruction (CAI) of prewriting
+and have assessed some departmental needs through informal
+interviews with the Dr. Elizabeth Hodges, Director of the Composition program
+and Writing/Computer Center and Michael Keller,
+Computer Coordinator of the Center.
+.ti 3
+I am a weekly volunteer at the English Writing/Computer Center
+and help beginning writers with problems that they have
+with using the computer.
+.ti 3
+I am currently developing a survey for writing instructors (see "Sample
+Survey" attached to \fBPreparation\fR sheet).
+.sp 2
+.ft HB
+.ps 12
+Procedures
+.ft R
+.ps 
+.sp1
+.BL 3
+.LI
+Research published heuristics in composition journals and instructional texts
+.LI
+Contact textbook publishers and compile a list of available college level
+prewriting software 
+.LI
+Purchase five prewriting programs to review
+.LI
+Survey (see "Sample Survey") and interview selected
+writing instructors at Virginia Commonwealth University,
+including Director of the English Department, Dr. James Kinney,
+and Dr. Elizabeth Hodges.
+.LI
+Conduct telephone interviews with professional writers,
+composition experts, and composition directors at other schools.  Each
+interview should take about a half of an hour.
+.LI
+Study survey and interview responses and develop a
+practical prewriting heuristic and computer program based on research and responses. 
+.LI
+Test a completed draft with five instructors to see if the heuristic is
+practical for in class use.  Take comments from the instructors and adjust
+the heuristic and/or program to respond to their problems.
+.LI
+Test instructors revision on two Composition and Rhetoric classes.  As the
+student exits the program he will be asked to do an on-line evaluation.   The
+results will be sent to me electronically so that I can adjust the software to
+help them understand the heuristic and the computer program. The test will be
+repeated until beginning writers are able to use the program for the first
+time without extra assistance. 
+.LI
+The English department allows students and instructors to access a help
+program known as TUTOR through a special account on the UNIX/LAN.  The program
+will be placed in the account where the staff and students can access it.
+.LI
+Through a special program, I will make a record of everyone who accesses the program
+and determine what kind of writers use the program most, 
+recording English 101 and 102 accounts and graduate accounts
+separately from other accounts which may use the program.
+.LE
+.sp2
+.bp
+.ft HB
+.ps 12
+Originality
+.sp 1
+.ft R
+.ps
+.ti 3
+Dr. Elizabeth Hodges has suggested that a prewriting program be
+written for the English Department.  I have taken her suggestion
+and begun the research for the project and I have determined the
+procedure for creating the program.  The English Department
+does not have access to a prewriting program, and I am eager to
+create a practical software package that can be used by both
+beginning and professional writers.
+.ti 3
+I am interested in surveying
+and interviewing professional writers who teach writing to see if they use the same
+prewriting techniques that they teach or if their ways of teaching prewriting
+differ from what textbooks and journals suggest.  I will then need to determine what
+method is the most practical for all writers. 
+.sp 2
+.ft HB
+.ps 12
+Personal Value
+.ft R
+.ps 
+.ti 3
+.sp 1
+I am interested in writing and I have enjoyed computing as a
+hobby.  I have assisted in the development of a program called
+TUTOR that is in use in on the computers that the English
+Department uses.  The research involved in developing an easy to
+understand computer/prewriting heuristic will expand my
+knowledge of the writing process and  will help me become a better
+writer and computer programmer.  As a person who is constantly
+trying to clarify and develop ideas for
+my writing, I see how this computer program can work for my own
+benefit and for the benefit of people like myself who want to
+write well.
+
+.bp
+.PH" "
+.ft HB
+.ps 12
+.sp 2
+.ce
+PREPARATION
+
+.sp 2
+.ft R
+.ps
+.ft B
+Course Work
+.sp 1
+.ft
+.ti 3
+I have taken Composition and Rhetoric 101 and 102 and am currently enrolled
+in Advanced Composition.  In the Spring Semester of 1991 I will be taking the
+only other composition course offered at Virginia Commonwealth University:
+Practical Writing Workshop.
+.sp 2
+.ft B
+Computer Programs
+.sp 1
+.ft 
+I have written several C-shell programs including
+
+.BL 3
+.LI
+HUNT:  A program that notifies the user when a certain person has logged
+onto the computer
+.LI
+PEN: An electronic mailing helper that allows the user to use a word
+processor and edit electronic mail before they send it.
+.LI
+Various Security and login accounting programs
+.LE
+.sp 2
+.ft B
+Additional Experience
+.sp 1
+.ft
+Research paper on UNIX, including an electronic mail interview with
+Harvard professor, Dr. Clifford Stoll, author of, \fIThe Cuckoo's Egg\fR.
+.sp 1
+Volunteer computer consultant in the Hibbs Computer/Writing Center
+.sp 1
+Work on the development for TUTOR program, a help program for the English Department.
+.sp 1
+Troubleshooting C-shell scripts for Michael Keller, Computer Coordinator of
+the Writing/Computer Center.
+
+.bp
+.PH" "
+.ft HB
+.ps 13
+.ce
+Sample Survey for Writing Instructors
+.sp 3
+.ft R
+.ps 12
+.BL 3
+.LI
+What kinds of preparation or prewriting do you perform before
+writing?
+.sp 1in
+.LI
+Do you do different prewriting exercises for different texts?
+.sp 1in
+.LI
+What kinds of prewriting do you encourage your students to do before
+they write?  
+.sp 1in
+.LI
+Do you encourage the use of any prewriting models?
+.sp 1in
+.LI
+Were you taught prewriting methods as a student? If so - what methods
+were taught?
+.sp 1in
+.LI
+As a writer who teaches writing, do you teach the same methods of
+prewriting that you practice?  Why or why not?
+.LE
+.bp
+.PH" "
+.ft HB
+.ps 13
+.ce
+Budget
+.ft 
+.ps 
+.sp 3
+.BL 3
+.LI
+$95     \fBBooks\fR
+.in 5
+\fIMastering Turbo Pascal\fR by, Tom Swan.  The book cover strong fundamental
+of the Pascal Compter Programming Language, along with additional information
+on Turbo Pascal.  $50. 
+.sp 1
+\fIC-shell Users Field Guide\fR is a book that cover all of the C-shell
+functions in the C-shell computer language.  $45.
+.sp 2
+.LI
+$30     \fBTelephone Interviews\fR
+.in 5
+Each of the six interviews should last about thirty minutes.  A US Sprint representative quoted the price at $9.99 an hour. 
+.in 0
+.sp 2
+.LI
+$165    \fBComputer Software\fR
+.in 5
+Academic computer software for IBM PC's and MacIntoshes usually runs at a
+minimum of $30 per program.  I would like to review at least 5 programs.
+.in 0
+.sp 2
+.LI
+$10     \fBCopies\fR
+.in 5
+I will need at least two hundred copies at $.05 per copy.  These copies will
+be used for surveys and for letters.
+.in 0
+.sp 3
+.LI
+$300    \fBTotal\fR

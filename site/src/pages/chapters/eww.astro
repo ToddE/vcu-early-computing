@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Before the Browser — VCU Early Academic Computing"
+  description="How an undergraduate, an English professor, and a campus systems consultant built VCU's first networked writing classroom, three years before the web browser."
+>
+  <div class="breadcrumb"><a href="../../">VCU Early Academic Computing</a> / Chapter 01</div>
+
+  <div class="masthead">
+    <div class="eyebrow">VCU LIBRARIES &amp; COLLEGE OF HUMANITIES AND SCIENCES <span class="path">/// archival referral, prepared by A. Todd Emerson</span></div>
+    <h1>Before the Browser</h1>
+    <p class="subhead">How an undergraduate, an English professor, and a campus systems consultant built VCU's first networked writing classroom &mdash; three years before anyone on campus had seen a web page.</p>
+    <div class="meta-row">
+      <span><strong>Account</strong> has0ate, Cabell/Hibbs DEC UNIX</span>
+      <span><strong>Active</strong> 1990&ndash;1993</span>
+      <span><strong>Department</strong> English, VCU</span>
+    </div>
+  </div>
+
+  <p class="lede">In a home directory recovered from a decommissioned VCU DEC system sits the working record of <strong>SHARE</strong>, later formalized as the <strong>Electronic Writers&rsquo; Workshop</strong> &mdash; a menu-driven program that let students submit, exchange, and comment on each other&rsquo;s papers over the campus network. It ran on text terminals. It predates the graphical web. And it was built by a VCU undergraduate under a state grant, with an English professor as the client and a campus systems administrator as co-developer.</p>
+
+  <section>
+    <h2><span class="num">01</span>What was actually built</h2>
+    <p>Starting around 1990, Todd Emerson &mdash; then a VCU English undergraduate &mdash; received an Undergraduate Research Grant for a project titled <em>Computers and Prewriting</em> (later <em>Computers and Freewriting</em>), supervised by <em class="name">Dr. Ann M. Woodlief</em>. The original goal was narrow: a Pascal program that would prompt students through a prewriting exercise. What it grew into was broader &mdash; a full classroom file-exchange system, built in c-shell on VCU&rsquo;s networked DEC machines.</p>
+    <p class="narrow">The system, <strong>SHARE</strong>, gave students a text menu with three real actions: <strong>grab</strong> a file from a shared class folder, <strong>share</strong> a file of their own into it, or <strong>submit</strong> a paper directly to their professor&rsquo;s box. It was wired into WordPerfect 5.0 through a keyboard macro, so a student could go from writing to submitting without leaving the word processor.</p>
+
+    <div class="terminal">
+      <div class="bar">EWW user manual &mdash; macro invocation</div>
+      <pre><span class="prompt">hibbs%</span> wp50
+<span class="prompt">PF3 KP2</span>
+Macro: share
+<span class="prompt">&hellip;</span> Grab &amp; Share menu appears</pre>
+    </div>
+
+    <p class="narrow">By 1992&ndash;93 the system had been packaged and formally copyrighted as the <strong>Electronic Writers&rsquo; Workshop</strong>, complete with an installation script, a numbered-folder system for organizing multiple class sections, and a written manual. It was in real use: Dr. Woodlief ran her own class through it, posting discussion questions to a shared folder that students would &ldquo;grab,&rdquo; annotate, and turn back in as reading responses &mdash; a workflow described plainly, in the collection&rsquo;s own words, as follows.</p>
+
+    <div class="quote-card">
+      <div class="who"><span>STAFF.INF &mdash; internal description, ca. 1992&ndash;93</span><span>on classroom use</span></div>
+      <blockquote>&ldquo;Dr. Anne Woodlief has the program set up to store a series of questions or things to think about while reading different texts. The students are able to &lsquo;grab&rsquo; and edit electronic copies of the questions&hellip; and store their reading responses on their private account.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>How it happened</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">1990&ndash;91</div>
+        <div class="tl-body">Emerson receives an Undergraduate Research Grant for a computer-assisted prewriting heuristic. Early prototype written in Pascal, intended to run on VCU&rsquo;s UNIX network.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1991</div>
+        <div class="tl-body"><em class="name">Michael A. Keller</em>, Computer Coordinator of the VCU Writing/Computer Center, becomes Emerson&rsquo;s working partner and grant sponsor. Together they also build TUTOR, a c-shell wrapper that simplified the <code>vi</code> editor for students, and help select hardware (386-33 PCs with MS-Windows) for the English Department.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 1992</div>
+        <div class="tl-body">Emerson requests a disk-quota increase from ACCS (Academic Campus Computing Services) to continue development under a new SCHEV grant, citing four years of accumulated coursework and program files. Confirmed in a reply from ACCS&rsquo;s Steven Saltzberg, then attending the national EDUCOM conference.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 1992&ndash;Jun 1993</div>
+        <div class="tl-body">The bulk of the surviving correspondence: 139 email exchanges with Dr. Woodlief covering folder structures, student access, and day-to-day troubleshooting of what she calls, in one subject line, &ldquo;The Electronic Workshop.&rdquo;</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Nov 1992</div>
+        <div class="tl-body"><em class="name">Gregory S. DeBruyn</em>, VCU&rsquo;s systems consultant (&ldquo;SC Mgr&rdquo;), begins contributing directly to the codebase &mdash; teaching Emerson ANSI terminal escape codes for the interface&rsquo;s inverse-video menus, and sharing a reusable file-management script.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 15&ndash;16, 1993</div>
+        <div class="tl-body">Dr. Woodlief writes directly to Steven A. Saltzberg of ACCS, calling the program &ldquo;totally unique&rdquo; and urging VCU to formally recognize and protect Emerson&rsquo;s work before he graduates. Saltzberg replies cautiously, raising questions of ownership and noting ACCS&rsquo;s limited resources to adopt or support it &mdash; the first documented moment the software is discussed at an administrative level.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 25, 1993</div>
+        <div class="tl-body">Emerson demonstrates SHARE to the VCU Faculty User Group (FUG) in Cabell Hall, at the invitation of committee chair Don Forsyth &mdash; an audience of faculty, administrators, and computing staff that included Saltzberg, gathered that month specifically to discuss &ldquo;using email in teaching.&rdquo;</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1993</div>
+        <div class="tl-body">SHARE is repackaged as the copyrighted Electronic Writers&rsquo; Workshop, with a formal manual and installation process, for continued use by English Department faculty.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">&mdash;</span>A thread worth pulling</h2>
+    <p class="narrow">Steven Saltzberg, the ACCS administrator who fielded Emerson&rsquo;s quota requests and sat in the room for the Feb 1993 FUG demonstration, later co-created <strong>Web Course in a Box</strong> &mdash; an early web-based course management system built at VCU that was licensed nationally in the mid-to-late 1990s &mdash; and went on to co-found <strong>MadDuck Technologies</strong>. Nothing in this collection proves a direct line from SHARE to that later work. But the documentary trail is real: Saltzberg personally administered Emerson&rsquo;s account, was lobbied in writing on the significance of what Emerson had built, and watched it demonstrated to VCU&rsquo;s assembled academic-computing leadership two years before the web browser existed on most desktops. That coincidence of person, place, and subject seems worth a researcher&rsquo;s attention &mdash; and Michael Keller&rsquo;s own surviving correspondence from this period, not yet located, may hold the rest of the story.</p>
+    <div class="quote-card">
+      <div class="who"><span>AWOOD &mdash; Ann M. Woodlief to Steven Saltzberg, Feb 15, 1993</span><span>on Todd's software</span></div>
+      <blockquote>&ldquo;Todd has developed this fantastic share-and-grab program for WP50 which seems to be totally unique&mdash;nothing quite like it seems to be available, not even for big bucks&hellip; This could potentially be a very big deal, and I want him to benefit from it as much as possible.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>The people</h2>
+    <p class="narrow">Four names recur across the source code and the mail. None of them thought they were making institutional history &mdash; the tone throughout is collegial, a little tired, occasionally joking. That ordinariness is part of what makes the record valuable.</p>
+    <div class="cast">
+      <div class="cast-item">
+        <h3>Dr. Ann M. Woodlief</h3>
+        <div class="role">English Department &mdash; grant supervisor, end user</div>
+        <p>Client and champion. Her mailbox with Emerson is the largest single document in the collection &mdash; the day-to-day record of a professor actually running a class through software an undergraduate was still debugging.</p>
+      </div>
+      <div class="cast-item">
+        <h3>Michael A. Keller</h3>
+        <div class="role">Computer Coordinator, Writing/Computer Center</div>
+        <p>Grant co-sponsor and technical mentor. Co-built TUTOR (the vi wrapper) and advised on department hardware purchasing decisions.</p>
+      </div>
+      <div class="cast-item">
+        <h3>Gregory S. DeBruyn</h3>
+        <div class="role">Systems consultant (&ldquo;SC Mgr&rdquo;)</div>
+        <p>Contributed terminal-programming know-how directly into SHARE&rsquo;s interface code, including the escape sequences behind its inverse-video menu highlighting.</p>
+      </div>
+      <div class="cast-item">
+        <h3>Steven A. Saltzberg</h3>
+        <div class="role">Academic Campus Computing Services</div>
+        <p>Approved Emerson's disk-quota extension, fielded Woodlief's appeal to formally recognize the software, and attended its Feb 1993 demonstration to the Faculty User Group. Later co-created Web Course in a Box and MadDuck Technologies &mdash; see above.</p>
+      </div>
+      <div class="cast-item">
+        <h3>Don Forsyth &amp; Kenneth C. Guyre</h3>
+        <div class="role">FUG chair; ACCS Manager of Technical Services</div>
+        <p>Forsyth invited Emerson to demonstrate SHARE to the Faculty User Group; Guyre processed the account changes that kept the project&rsquo;s disk quota &mdash; and Emerson himself &mdash; on VCU's systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Why it belongs in an archive</h2>
+    <div class="sig-list">
+      <div class="sig-item">
+        <div class="sig-mark">&mdash;</div>
+        <div>
+          <h4>It predates the web at VCU</h4>
+          <p>SHARE and EWW were built and in classroom use years before browser-based tools existed on campus. This is a homegrown learning-management system, built from scratch, in a period usually documented (if at all) only by institutional memoranda &mdash; not by the working code and correspondence itself.</p>
+        </div>
+      </div>
+      <div class="sig-item">
+        <div class="sig-mark">&mdash;</div>
+        <div>
+          <h4>It documents state-funded innovation from the ground up</h4>
+          <p>The collection traces a SCHEV-funded project from grant proposal through working deployment, including the administrative correspondence (quota requests, ACCS approvals) that rarely survives alongside the technical output it enabled.</p>
+        </div>
+      </div>
+      <div class="sig-item">
+        <div class="sig-mark">&mdash;</div>
+        <div>
+          <h4>It's a cross-role collaboration record</h4>
+          <p>Faculty, student, and IT staff appear together as co-developers, not as separate constituencies &mdash; a structure of collaboration that VCU's current teaching-technology initiatives still aim for.</p>
+        </div>
+      </div>
+      <div class="sig-item">
+        <div class="sig-mark">&mdash;</div>
+        <div>
+          <h4>The record is unusually complete</h4>
+          <p>Two independent backups preserved not just the finished software but its drafts, its bug reports, and the email trail of decisions behind it &mdash; source code and provenance together, which is rare for informal projects of this era.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>What's in the collection</h2>
+    <p class="narrow">Sixty-one files, recovered from two backup copies of the original DEC UNIX account, organized into four series. A full item-level finding aid accompanies this overview. Email addresses, phone numbers, and personal-activity content unrelated to the project have been redacted or removed.</p>
+    <div class="contents">
+      <div class="contents-row">
+        <div><div class="series-label">SERIES 1</div><div class="series-name">SHARE System Source</div></div>
+        <p>The original c-shell menu program &mdash; grab, share, submit, exit &mdash; and its successive backups and utility scripts.</p>
+      </div>
+      <div class="contents-row">
+        <div><div class="series-label">SERIES 2</div><div class="series-name">EWW System Documentation</div></div>
+        <p>The packaged, copyrighted release: manual, setup script, folder-numbering system, and the internal description of Dr. Woodlief's actual classroom workflow.</p>
+      </div>
+      <div class="contents-row">
+        <div><div class="series-label">SERIES 3</div><div class="series-name">Grant &amp; Research Documentation</div></div>
+        <p>The SCHEV quota letter, grant proposal and progress reports, and the original Pascal prototype of the prewriting program.</p>
+      </div>
+      <div class="contents-row">
+        <div><div class="series-label">SERIES 4</div><div class="series-name">Development Correspondence</div></div>
+        <p>The Woodlief mailbox in full, plus correspondence with Keller, DeBruyn, and VCU's Hibbs site manager &mdash; the working conversation behind the code.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Prepared from the has0ate DEC UNIX home directory, VCU Cabell/Hibbs systems, recovered via two independent backup copies. Personal correspondence and undergraduate coursework unrelated to the SHARE/EWW project have been retained separately and excluded here. See the full finding aid in this repository's <code>chapters/01-electronic-writers-workshop/Finding_Aid.md</code>.
+  </footer>
+</BaseLayout>

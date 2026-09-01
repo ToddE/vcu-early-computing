@@ -1,0 +1,6 @@
+#
+set prompt = "$cwd> "
+
+alias cd 'chdir \!* ; set prompt = "$cwd> "'
+
+

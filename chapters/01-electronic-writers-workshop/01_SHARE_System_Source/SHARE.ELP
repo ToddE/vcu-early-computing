@@ -1,0 +1,181 @@
+#
+############################################################################
+#Set id based on whoami.  Instructor files identified with extention prof
+############################################################################
+
+        set own = `whoami | cut -c1-5`     
+        set pth = "/class/has/elp/$own/"
+
+        set id = `whoami | cut -c6-7`     
+        	if  $id == "" then
+            	set id = prof
+        	endif
+
+############################################################################
+#  Greeting
+############################################################################
+
+						# SET GREETING FOR ID MENU
+set check = `date|sed 's/  / /g'|sed 's/ /:/g'|  cut -d":" -f4`  
+
+	if ( $check < 12 ) then 
+     	    set greet = "Good morning"
+
+	else if ($check <= 18 ) then
+     	    set greet = "Good afternoon"
+
+	else set greet = "Good evening"
+        endif
+
+############################################################################
+#Print menu of choices
+############################################################################
+while (1)
+begin:
+/person/has/eng/smhibbs/class.bin/menu.1
+
+echo -n "$greet.  Please enter an option from the menu above. "
+
+     set resp = $<
+     switch ($resp)
+     
+		case g:  		# GRAB 
+                clear
+        	grab:
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo "Available files from shared directory"
+        echo 
+        ls "$pth"share
+        grab2:
+        echo 
+        echo -n "Grab which file? "
+        set file=$<
+
+       if ! ( -f "$pth"share/"$file" ) then 
+
+           if ( $file == x ) then
+           echo -n "Exit grab option? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+               	endif  
+
+           endif
+
+       echo "Sorry, $file is not in the list above."
+       goto grab2
+       endif
+
+        cp "$pth"share/$file  $file
+        echo 
+        echo "$file has been copied to your home directory."
+        echo 		
+        echo -n "Grab another? (N) "     
+        set resp = $<
+         if (( $resp == y ) || ( $resp == Y )) then
+          clear
+          goto grab
+         endif
+        breaksw
+
+     
+		case s:   		# SHARE 
+                clear
+			share:
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo "List of your personal files."
+
+        		echo 
+                        ls
+                        share2:
+                        echo 
+        		echo -n "Share which file? "
+        		set file=$<
+
+       if ! ( -f ~/"$file" ) then 
+
+           if ( $file == x ) then
+           echo -n "Exit share option? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+               	endif  
+
+           endif
+
+       echo "Sorry, $file was not in the list above."
+       goto share2
+       endif
+        		cp ~/$file "$pth"share/$file.$id
+        		chmod +r  "$pth"share/$file.$id
+                        echo 
+                        echo "$file has been copied to the share directory." 
+                        echo  
+        		echo -n "Share another? (N) "     
+        		set resp = $<
+        		if (( $resp == y ) || ( $resp == Y )) then
+                                clear
+        			goto share
+        		endif
+        	breaksw
+                  
+         	 
+		case x: 		# EXIT TO SHELL
+                exit
+		breaksw
+
+		case t:   		# SUBMIT
+                clear
+        		submit:
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo "List of your personal files"
+                        echo  
+                        ls
+                        submit2:
+                        echo 
+        		echo -n "Turn in which file to your instructor? "
+        		set file=$<
+
+       if ! ( -f ~/"$file" ) then 
+
+           if ( $file == x ) then
+           echo -n "Exit turn-in option? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+               	endif  
+
+           endif
+
+       echo "Sorry, $file was not in the list above."
+       goto submit2
+       endif
+
+        		cp ~/$file "$pth"box
+                        chmod g+rw "$pth"box/$file 
+                        echo 
+                        echo "$file has been copied to your instructor's box."
+			echo 
+        		echo -n "Turn in another file? (N)"     
+        		set resp = $<
+        		if (( $resp == y ) || ( $resp == Y )) then
+                                clear
+        			goto submit
+        		endif
+                 
+       endsw
+end
+
+

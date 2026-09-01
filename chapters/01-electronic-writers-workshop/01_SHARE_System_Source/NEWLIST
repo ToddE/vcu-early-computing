@@ -1,0 +1,172 @@
+#! /bin/csh -f
+#
+# "onintr" and "stty susp" simply disallow users to ctrl-Z and ctrl-C
+# out of the script except through controlled exits.
+#
+onintr QUIT
+stty susp undef
+#######
+#######  Set up temporary file location (use process number - $$)
+#######
+set command = $0
+set command = ${command:t}
+set tmp = /usr/tmp/${command}$$
+
+#######
+#######  filenum     = numbers the files as they are displayed
+#######  columncount = keeps track on when to start a newline according
+#######                to the maximum number of columns allowed
+#######                (based on max file length
+#######  longword    = stores the longest length of the file list
+#######  msg         = error message variable
+#######
+set filenum=0
+set columncount=2
+set longword=0
+set msg = ""
+
+#######
+####### "noglob" allows for the displaying of filenames with strange
+####### characters in them (ie, ~ , #, etc...).  With noglob, UNIX
+####### will NOT try to expand these to their usually interpreted
+####### "special meaning."
+#######
+set noglob
+
+
+#######
+#######  Find the longest filename for screen output display  #######
+#######
+/bin/ls >&! "$tmp.1"
+#/bin/ls -a >&! "$tmp.1"       *** use if .files should be displayed ***
+foreach x ( "`cat '$tmp.1'`" )
+   set thisword = `echo "$x"|wc -c`
+   if ( $thisword > $longword ) then
+      set longword = $thisword
+   endif
+end
+unset noglob
+
+
+#######
+#######  Sets the number of columns for output display
+#######
+if ( $longword < 10 ) then
+   set numcols = 5
+else
+   if ( $longword < 15 ) then
+      set numcols = 4
+   else
+      if ( $longword < 21 ) then
+         set numcols = 3
+      else
+         if ( $longword < 31 ) then
+            set numcols = 2
+         else
+            set numcols = 1
+         endif
+      endif
+   endif
+endif
+
+
+#######
+#######  Set up longword and add 5 for "padding" between display and
+#######  get file listing into file $tmp.2, padding to length "$longword"
+#######
+@ longword = $longword + 2
+set filelist = ( `ls -F | grep -v /` )
+#set filelist = ( `ls -aF | grep -v /` )
+LIST:
+set number=""
+set thisword = 5
+echo -n " $filenum) [7mEXIT[0m" >! $tmp.2
+while ( $thisword < $longword )
+   echof " " >> $tmp.2
+   @ thisword = $thisword + 1
+end
+clear
+echof "\n\n\nGetting file list... please wait\n\nWorking"
+foreach x ( `echo $filelist` )
+    @ filenum++
+    @ columncount++
+    set thisword = `echo "$x"|wc -c`
+    if ( "$filenum" < 10 ) then
+       echof " $filenum) $x" >> $tmp.2
+    else
+       echof "$filenum) $x" >> $tmp.2
+    endif
+    while ( $thisword < $longword )
+       echof " " >> $tmp.2
+       @ thisword = $thisword + 1
+    end
+    if ( "$columncount" > $numcols ) then
+       echof "\n" >> $tmp.2
+       set columncount=1
+    endif
+echof "."
+end
+
+
+#######
+#######  Echo error message (if any) and file list ($tmp.2) to the screen
+#######
+AGAIN:
+clear
+if ( "$msg" != "" ) then
+   echof "\n$msg\n\n"
+endif
+cat $tmp.2
+
+
+#######
+#######  Now get the number of the file to manipulate...
+#######
+echof "\n\n\n         Enter the number of the file you wish to... "
+set number = `getstype -b isdigit`
+   if ( "$status" == 1 ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   endif
+   if ( "$number" == 0 ) then
+      goto QUIT
+   endif
+   if ( ( "$number" > $filenum ) || ( "$number" < 1 ) ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   else
+
+
+#######
+#######  Show what number you entered
+#######
+      set whichnum=0
+      foreach filename ( `echo $filelist` )
+         @ whichnum = $whichnum + 1
+         if ( "$number" == "$whichnum" ) then
+
+#######
+#######  Show what number you entered and the file it matched
+#######
+            echof "\n\nThe file corresponding to the number $number is $filename\n\n"
+            goto FOUND
+         else
+            @ thiscounter = $filenum - 1
+            if ( "$thiscounter" == 0 ) then
+               set msg = "Invalid Entry -->  $number"
+               goto AGAIN
+            endif
+         endif
+      end
+   endif
+FOUND:
+#######
+#######  Here is where you would perform whatever action you want
+#######  done on the file the user entered
+#######
+echo "hahahahahahahahaha... IT'S ALIVE\!\!\!  IT'S ALIVE\!\!\!"
+QUIT:
+echof "\n\n"
+/bin/rm -r $tmp* >> /dev/null
+stty susp 
+

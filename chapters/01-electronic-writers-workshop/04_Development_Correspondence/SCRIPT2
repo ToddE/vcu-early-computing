@@ -1,0 +1,145 @@
+From scmgr Sat Nov 14 17:23:00 1992
+Return-Path: <scmgr>
+Received:  by cabell.vcu.edu (5.57/OSx-4.1-hm)
+	id AA21027; Sat, 14 Nov 92 17:22:59 -0500
+From: SC Mgr <scmgr>
+Full-Name: SC Mgr
+Message-Id: <[email redacted]>
+Subject: okay, it's improved again!
+To: has0ate (A. Todd Emerson)
+Date: Sat, 14 Nov 92 17:22:59 EST
+X-Mailer: ELM [version 2.3 PL11]
+Status: OR
+
+
+Todd -
+
+I have improved the program again (this time it only took 20 minutes
+to make a MAJOR improvement).  Now, the program will handle alpha
+input and return an "invalid entry" message.  Before it would blow
+up.
+
+Also, before, when you entered an incorrect/invalid value, you had to
+wait until the program rebuilt the filelist... too time consuming!!!
+I changed that so the program says "Please wait...  getting file
+list" when it first gets the list of files in the variable... and, as
+it gets the files, it sends the output to a temporary file.  Then, it
+cats the files (numbers and filenames) to the screen.  If an invalid
+entry is given, it simply prints "invalid entry" and re-cats the file
+to the screen (instead of having to wait for the program to redo the
+filelist).  MUCH BETTER!!!
+
+Anyway, here it is... don't make too many major enhancements to it as
+I have some other ideas to try on it (and I don't want us to work in
+opposite directions)... let me know if you want it to perform
+anything specific so I have some direction in the changes I make.
+____
+Greg
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#! /bin/csh -f
+#
+# "onintr" and "stty susp" simply disallow users to ctrl-Z and ctrl-C
+# out of the script except through controlled exits.
+#
+onintr QUIT
+stty susp undef
+#######  Set up temporary file location (use process number - $$)
+set command = $0
+set command = ${command:t}
+set tmp = /usr/tmp/${command}$$
+#######  Sets the number of columns for output display
+set numcols = 3
+#######  Several counters used in foreach loop below (init variables)
+set y=1
+set z=1
+set longword=0
+set msg = ""
+#######  "noglob" allows for the displaying of filenames with strange
+####### characters in them (ie, ~ , #, etc...).  With noglob, UNIX
+####### will NOT try to expand these to their usually interpreted
+####### "special meaning."
+set noglob
+#######  Find the longest filename for screen output display
+/bin/ls >&! "$tmp.1"
+foreach x ( "`cat '$tmp.1'`" )
+   set thisword = "`echo '$x'|wc -c`"
+   if ( $thisword > $longword ) then
+      set longword = $thisword
+   endif
+end
+unset noglob
+#######  Set up longword and add 5 for "padding" between display
+@ longword = $longword + 2
+#######  Get file listing into file $tmp.2, padding to length "$longword"
+set filelist = ( `ls -F | grep -v /` )
+LIST:
+set number=""
+set y=1
+set z=1
+clear
+echof "\n\n\n          Please wait... getting file list.  "
+foreach x ( `echo $filelist` )
+    set thisword = "`echo '$x'|wc -c`"
+    if ( "$y" < 10 ) then
+       echof " $y) $x" >> $tmp.2
+    else
+       echof "$y) $x" >> $tmp.2
+    endif
+    while ( $thisword < $longword )
+       echof " " >> $tmp.2
+       @ thisword = $thisword + 1
+    end
+    @ y++
+    @ z++
+    if ( "$z" > $numcols ) then
+       echof "\n" >> $tmp.2
+       set z=1
+    endif
+end
+echo -n "$y) [7mEXIT[0m" >> $tmp.2
+#######  Echo error message (if any) and file list ($tmp.2) to the screen
+AGAIN:
+clear
+if ( "$msg" != "" ) then
+   echof "\n$msg\n\n"
+endif
+cat $tmp.2
+#######  Now get the number of the file to manipulate...
+echof "\n\n\n         Enter the number of the file you wish to... "
+set number = `getstype -b isdigit`
+   if ( "$status" == 1 ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   endif
+   if ( "$number" == "$y" ) then
+      goto QUIT
+   endif
+   if ( ( "$number" > $y ) || ( "$number" < 1 ) ) then
+      set msg = "Invalid Entry -->  $number"
+      goto AGAIN
+   else
+#######  Show what number you entered
+      echof "\n\nYou entered the number $number\n\n"
+      set whichnum=0
+      foreach filename ( `echo $filelist` )
+         @ whichnum = $whichnum + 1
+         if ( "$number" == "$whichnum" ) then
+#######  Show what number you entered and the file it matched
+#######  Here is where you would perform whatever action you want
+#######  done on the file the user entered
+            echo "The file corresponding to the number $number is $filename"
+            goto FOUND
+         else
+            if ( "$whichnum" == "$y" ) then
+               set msg = "Invalid Entry -->  $number"
+               goto AGAIN
+            endif
+         endif
+      end
+   endif
+FOUND:
+QUIT:
+echof "\n\n"
+/bin/rm -r $tmp* >> /dev/null
+stty susp 
+

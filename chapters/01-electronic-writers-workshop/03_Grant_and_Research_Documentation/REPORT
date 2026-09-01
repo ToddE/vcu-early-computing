@@ -1,0 +1,55 @@
+.PH""
+.ps 18
+.ft AG
+Abstract & Development
+.br
+.ft R
+.ps 12
+.vs 15
+
+I have been working on a project to develop a computer prewriting
+program since the fall semester of 1990, when I applied for a grant from
+the Undergraduate Research Program at Virginia Commonwealth
+University.  My goal was to create a computer driven prewriting
+heuristic, which would be run on VCU's UNIX local area network, and used
+by the English Department for the instruction of prewriting techniques.  
+
+Knowing little about prewriting heuristics in the beginning, I began 
+collecting information about prewriting from the most available sources:
+professors who taught writing, and essays and other readings on
+prewriting.
+To get ideas for a heuristic, I surveyed professors who taught
+writing, because they write daily and know the needs of
+their students.  After collecting the responses to the survey, I
+assessed the professors needs, and began researching, reading articles
+and books on writing, and discovering the best way to develop and present a
+prewriting computer program.  
+
+I realized that I was not prepared to write a complex program 
+as was needed to be effective.  Time and resources are also problems I
+have encountered, as the development and research continues, and the campus
+computers have changed, some parts of the program working, none of the
+program being tested.  I have learned that the development of such an
+involved project takes much longer than I had anticipated.  
+
+An essay which has helped me a great deal during this project is
+"Prewriting and Computing," by James Strickland of Slippery Rock
+University.  Strickland outlines what a \fIgood\fR prewriting program
+should and should not do.  By offering the user "individuality through
+branching capabilities, uniqueness through options not available with
+traditional pen and paper,"  a computer can work interactively with the
+user and simulate human dialogue (Strickland, Writing on Line. 70).
+This type of interaction allows the writer to put together information
+he or she already has into concrete knowledge: a solid base to work and
+write from.  
+
+An effective program is one that is both used and easily usable. 
+Strickland emphasizes that if the program immitates an exercise
+done with pen and paper, then there is no point in putting it together,
+since the writer would probably prefer to use conventional methods,
+rather than new and unfamiliar methods of doing the same exercise (70?).
+
+While many professors suggested that the prewritig program ask general
+question about a text, idea, or topic.  This is important to the
+development of a text, and could be done without the use of the
+computer, as is commonly done.  This created an obstacle

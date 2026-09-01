@@ -1,0 +1,3 @@
+#
+echo "The directory you are in -- according to VARTEST -- is $directory"
+echo "By the way - I meant to tell you:  $1"

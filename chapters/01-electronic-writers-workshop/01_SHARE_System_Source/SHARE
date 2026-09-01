@@ -1,0 +1,323 @@
+#
+############################################################################
+#Set id based on whoami.  Instructor files identified with extention prof
+############################################################################
+
+        set own = `whoami | cut -c1-5`     
+	set own = has0ate
+        set pth = ~/
+
+        set id = `whoami | cut -c6-7`     
+        	if  $id == "" then
+            	set id = prof
+        	endif
+
+set checker = nodo
+############################################################################
+#  Greeting
+############################################################################
+
+						# SET GREETING FOR ID MENU
+set check = `date|sed 's/  / /g'|sed 's/ /:/g'|  cut -d":" -f4`  
+
+	if ( $check < 12 ) then 
+     	    set greet = "Good morning"
+
+	else if ($check <= 18 ) then
+     	    set greet = "Good afternoon"
+
+	else set greet = "Good evening"
+        endif
+
+############################################################################
+#Print menu of choices
+############################################################################
+while (1)
+begin:
+/person/has/eng/smhibbs/class.bin/menu.1
+
+echo -n "$greet.  Please enter an option from the menu above. "
+
+     set resp = $<
+     switch ($resp)
+##################################################     
+		case g:  		# GRAB 
+###################################################
+                clear
+grab:
+
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo "Available folders:  "
+echo 
+echo 
+ls -F ~/Share | grep "/" | cut -d/ -f1 
+echo 
+echo 
+echo "Grab a file from which folder? "
+	set flder = $<
+		while ( ! (-d ~/Share/"$flder") & ($flder != x)) 
+			echo "$flder does not exist.  Please try again."
+			echo
+			echo -n "Grab a file from which folder? "
+			set flder = $<
+		end
+
+
+
+#EXIT
+           if ( $flder == x ) then
+           echo -n "Exit? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+		else
+		clear
+		goto grab
+               	endif  
+
+           endif
+
+####endexit
+clear
+echo
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo 
+echo 
+echo
+echo "Available files from $flder folder"
+        echo 
+	if ($flder == Comments) then
+		echo "The following comments have been submitted to your id:"
+		echo 
+		ls ~$own/Share/Comments | grep \\.$id  
+	else
+        	ls ~/Share/$flder
+	endif
+        echo 
+        echo -n "Grab which file? "
+        set file=$<
+
+       while ( ! ( -f ~/Share/$flder/$file ) & ($file != x))
+		echo "Sorry, $file is not in the list above."
+		echo -n "Grab which file? "	
+		set file = $<
+       end
+
+	
+#EXIT
+           if ( $file == x ) then
+           echo -n "Exit? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+		else
+		clear
+		goto grab
+               	endif  
+
+           endif
+
+####endexit
+set homefile = $file
+
+while ( -f ~/$homefile) 
+	echo "A file named $file already exists in your home directory."
+	echo -n "Please give $file a new name : "
+	set homefile = $<
+end
+
+if ! (-f ~/$homefile) then
+	cp ~/Share/$flder/$file ~/$homefile 
+endif
+
+        echo "$file has been copied to your home directory as $homefile."
+        echo 		
+        echo -n "Grab another? (N) "     
+        set resp = $<
+         if (( $resp == y ) || ( $resp == Y )) then
+          clear
+          goto grab
+         endif
+        breaksw
+
+     
+#################################################
+		case s:   		# SHARE 
+                clear
+#########################################################################
+share:
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo
+##################################
+	folderchooseshare:
+	echo 
+	echo 
+	echo 
+	echo  "To which folder do you want to share? "
+	echo 
+	echo 
+	ls -F | grep "/" | cut -d/ -f1 
+	echo 
+	echo 
+	echo "Enter the name of the Folder you want to share to: "
+		set flder = $<
+		
+
+		while ( ! (-d ~/Share/$flder) & ($flder != x))
+			echo "$flder does not exist.  Please try again."
+			echo -n  "Share to what folder? " 
+			set flder = $<
+		end
+	echo 
+
+#EXIT
+           if ( $flder == x ) then
+           echo -n "Exit? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               		goto begin
+		else
+			clear
+			goto share
+               	endif  
+
+           endif
+
+####endexit
+clear
+echo
+echo 
+
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+
+echo 
+echo
+
+#############################################
+	filechooseshare:
+	echo "List of your home directory. " 
+	echo 
+	ls ~
+	echo 
+	echo -n "Which file would you like to share? " 
+		set filename = $<
+		while ( ! ( -f ~/$filename) & ($filename != x)) 
+			echo "$filename does not exist.  Please try again."
+			echo -n "Which file would you like to share? "
+			set filename = $<
+		end
+	echo 
+
+#EXIT
+           if ( $filename == x ) then
+           echo -n "Exit? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+		else
+		clear
+		goto share
+               	endif  
+
+           endif
+
+####endexit
+######
+
+set foldfile = $filename
+
+while ( -f ~/Share/$flder/$foldfile.$id) 
+	echo "A file named $filename already exists in the $flder folder."
+	echo -n "Please give a $filename new name for the $flder folder: "
+	set foldfile = $<
+end
+
+if ! (-f ~/Share/$foldfile.$id) then
+	echo -n "Share $filename with $flder folder as $foldfile? (Y/n) "
+	set yorn = $<
+		if (($yorn == N) || ($yorn == n) || ($yorn == no) || ($yorn == NO) || ($yorn == No) || ($yorn == nO) || ($yorn == nah) || ($yorn == nope) || ($yorn == non)) then 
+		clear
+		goto share
+		endif
+	cp ~/$filename ~/Share/$flder/$foldfile.$id
+
+endif
+
+echo  
+echo -n "Share another? (N) "     
+set resp = $<
+if (( $resp == y ) || ( $resp == Y )) then
+	clear
+	goto share
+endif
+
+        	breaksw
+                  
+         	 
+		case x: 		# EXIT TO SHELL
+                exit
+		breaksw
+
+		case t:   		# SUBMIT
+                clear
+        		submit:
+echo " ---------------------------"
+echo "|  e(x)it to previous menu  |"
+echo " ---------------------------"
+echo  
+echo "List of your personal files"
+                        echo  
+                        ls
+                        submit2:
+                        echo 
+        		echo -n "Turn in which file to your instructor? "
+        		set file=$<
+
+       if ! ( -f ~/"$file" ) then 
+
+           if ( $file == x ) then
+           echo -n "Exit turn-in option? (N) " 
+           set resp=$< 
+
+        	if (( $resp == y ) || ( $resp == Y )) then
+               	goto begin
+		else 
+		goto submit
+               	endif  
+
+           endif
+
+       echo "Sorry, $file was not in the list above."
+       goto submit2
+       endif
+
+        		cp ~/$file "$pth"box
+                        chmod g+rw "$pth"box/$file 
+                        echo 
+                        echo "$file has been copied to your instructor's box."
+			echo 
+        		echo -n "Turn in another file? (N)"     
+        		set resp = $<
+        		if (( $resp == y ) || ( $resp == Y )) then
+                                clear
+        			goto submit
+        		endif
+                 
+       endsw
+end
+
+

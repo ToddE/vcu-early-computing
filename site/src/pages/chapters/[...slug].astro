@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('chapters', ({ data, id }) => {
+    return !data.draft && !id.startsWith('_');
+  });
+  return chapters.map((chapter) => ({
+    params: { slug: chapter.id.replace(/\.md$/, '') },
+    props: { chapter },
+  }));
+}
+
+const { chapter } = Astro.props;
+const { Content } = await render(chapter);
+---
+
+<BaseLayout title={`${chapter.data.title} — VCU Early Academic Computing`} description={chapter.data.dek}>
+  <div class="breadcrumb"><a href="../../">VCU Early Academic Computing</a> / {chapter.data.title}</div>
+
+  <div class="masthead">
+    <h1>{chapter.data.title}</h1>
+    <p class="subhead">{chapter.data.dek}</p>
+    <div class="meta-row">
+      <span><strong>Dates</strong> {chapter.data.dates}</span>
+    </div>
+  </div>
+
+  <div class="prose">
+    <Content />
+  </div>
+</BaseLayout>

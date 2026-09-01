@@ -1,0 +1,22 @@
+# @(#) share v2.1   Copyright 1993  A. Todd Emerson.  
+# @(#) Main script for Electronic Writers' Workshop  
+# @(#) Author: Todd Emerson.  
+# @(#) Based on the share script by Michael Keller. 
+# @(#) Contributors:
+# @(#) 	- Michael Keller (pseudocode; v1 share script)
+# @(#) 	- Gregory Debruyn (listing procedure used in creating NUMLIST)
+# @(#) Include Programs: 
+# @(#) 	* NUMLIST (FLDRNUMLIST).  Copyright 1993 by A. Todd Emerson
+# @(#)	    -newlist .  Copyright 1992,1993 by Gregory DeBruyn
+# @(#) 	* GETFILENUM.  Copyright 1993 by A. Todd Emerson
+# @(#) 	* MENUGETOPTION. Copyright 1993 by A. Todd Emerson 
+# @(#) 	* folderset.  Copyright 1993 by A. Todd Emerson
+# @(#) 	* profbox.  Copyright  1993 by A. Todd Emerson
+# @(#) 	* setup.  Copyright 1993 by A. Todd Emerson
+# @(#)
+# @(#)       share v2.1 is the property of A. Todd Emerson
+# @(#) All rights reserved.  No part of this script may be copied, 
+# @(#)    or reproduced in any form without the permission of:
+# @(#)          A. Todd Emerson (proxy: Michael Keller)
+# @(#)                         AND
+# @(#)               Department of English, VCU 
