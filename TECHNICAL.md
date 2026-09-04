@@ -100,17 +100,36 @@ Advantages over the current setup:
   (e.g. Michael Keller) start submitting chapters via PR instead of
   committing straight to `main`.
 
-To switch:
-1. In Cloudflare's dashboard, connect this GitHub repo as a Pages
-   project. Build command `npm run build`, root directory `site`,
-   output directory `dist`.
-2. Change `astro.config.mjs`: drop `base` entirely (or set it to `/`),
-   and update `site` to the real domain once chosen.
-3. Point the chosen subdomain at Cloudflare Pages in DNS (trivial if the
-   parent domain is already on Cloudflare).
+**Because the Astro project lives in `site/`, not the repo root, "Root
+directory" is the field that matters most below — get it wrong and the
+build can't find `package.json`.**
+
+To switch, in Cloudflare's dashboard (Workers & Pages → Create →
+Pages → Connect to Git → select this repo):
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Astro (if offered; otherwise leave as None and use the values below) |
+| Root directory | `site` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Node version | 22 or later (set via environment variable `NODE_VERSION=22`, or add an `.nvmrc` in `site/` if Cloudflare's default drifts below what Astro needs) |
+
+Then:
+1. Change `astro.config.mjs`: drop `base` entirely (or set it to `/`),
+   and set `site` to the real domain once chosen (e.g.
+   `https://vcucompute.hottoddie.com`).
+2. Because internal links are already relative (`chapters/eww/`, `../../`)
+   rather than root-absolute, and the favicon/og:image links go through
+   `import.meta.env.BASE_URL`, no other file needs to change — the whole
+   site keeps working once `base` moves to `/`.
+3. In Cloudflare Pages → Custom domains, add the chosen subdomain (e.g.
+   `vcucompute.hottoddie.com`). If the parent domain (`hottoddie.com`) is
+   already on Cloudflare, this provisions the DNS record and certificate
+   automatically — no manual CNAME needed.
 4. Delete or disable `.github/workflows/deploy-site.yml` and turn off
    GitHub Pages in the repo settings, to avoid two systems building the
-   same site.
+   same site from the same push.
 
 ## Favicon / social preview
 
