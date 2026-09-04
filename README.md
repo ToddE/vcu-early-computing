@@ -7,23 +7,12 @@ recovered DEC UNIX account backups, correspondence, source code, and
 (eventually) interviews with the people who built this infrastructure.
 
 This repository holds both the curated source material (`chapters/`)
-and the public site built from it (`site/`, an Astro project deployed to
-GitHub Pages via `.github/workflows/deploy-site.yml`). Only reviewed,
-relevant material is kept here — see **Source material and privacy**
-below.
+and the public site built from it (`site/`). Only reviewed, relevant
+material is kept here — see **Source material and privacy** below.
 
-## Site
-
-The public site lives in `site/` (Astro, plain CSS, no framework). To
-run it locally:
-
-```
-cd site
-npm install
-npm run dev
-```
-
-Pushes to `main` that touch `site/` auto-deploy to GitHub Pages.
+This README is about what the project *is*. If you're setting up the
+site locally, changing how it's deployed, or maintaining the code,
+see [TECHNICAL.md](TECHNICAL.md) instead.
 
 ## Chapters
 
