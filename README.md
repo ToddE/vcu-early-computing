@@ -43,6 +43,13 @@ See `chapters/01-electronic-writers-workshop/Finding_Aid.md` for the
 full item-level inventory, and `Artifacts/before-the-browser.html` for
 the narrative writeup.
 
+Worth noting: the correspondence in this chapter also documents `eng.poet`,
+a department mailing list Michael Keller set up via VCU's system aliases
+around the same time he was building SHARE — a small, separate example of
+early email infrastructure in academic use at VCU, kept here for that
+reason even though its subject (a poetry discussion group) isn't part of
+the SHARE/EWW story itself.
+
 ### Future chapters (planned)
 - An oral history / interview with **James Spivey**, founder of VCU's
   Academic Computing, on the founding and early direction of academic
